@@ -5,6 +5,6 @@
     <color name="text_login">#FA7E5A</color>
     <color name="purple_txt_login">#6F11E1</color>
     <color name="toolbar_color">#0021CE</color>
-
+    <color name="lower_white">#ECEAEF</color>
 
 </resources>

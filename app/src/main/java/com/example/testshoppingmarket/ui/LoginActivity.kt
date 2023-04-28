@@ -9,7 +9,7 @@ import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.lifecycle.Observer
 import com.example.testshoppingmarket.R
-import com.example.testshoppingmarket.databinding.ActivityMainBinding
+import com.example.testshoppingmarket.databinding.LayoutLoginActivityBinding
 import com.example.testshoppingmarket.model.LoginRequest
 import com.example.testshoppingmarket.ui.viewModel.LoginViewModel
 import com.example.testshoppingmarket.utils.Resource
@@ -22,7 +22,7 @@ class LoginActivity : AppCompatActivity() {
     private val viewModelLogin: LoginViewModel by viewModels()
 
     private val viewBinding by lazy {
-        ActivityMainBinding.inflate(layoutInflater)
+        LayoutLoginActivityBinding.inflate(layoutInflater)
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {

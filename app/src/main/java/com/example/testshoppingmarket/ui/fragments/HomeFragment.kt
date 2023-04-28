@@ -6,17 +6,27 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.example.testshoppingmarket.R
-import com.example.testshoppingmarket.databinding.ActivityMain2Binding
+import com.example.testshoppingmarket.databinding.LayoutHomeFragmentBinding
+import com.example.testshoppingmarket.databinding.LayoutMainActivityBinding
 
-class HomeFragment: Fragment(R.layout.layout_home_fragment) {
+class HomeFragment: Fragment() {
 
 
+    private val viewBinding by lazy {
+        LayoutHomeFragmentBinding.inflate(layoutInflater)
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return super.onCreateView(inflater, container, savedInstanceState)
+        return viewBinding.root
     }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+    }
+
 }
