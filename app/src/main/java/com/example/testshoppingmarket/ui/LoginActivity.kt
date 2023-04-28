@@ -1,5 +1,6 @@
 package com.example.testshoppingmarket.ui
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -41,6 +42,8 @@ class LoginActivity : AppCompatActivity() {
                             hideProgress()
                             response.data?.let {
                                 toast(this,it.token)
+                                val intent = Intent(this,MainActivity::class.java)
+                                startActivity(intent)
                             }
                         }
                         is Resource.Error -> {
