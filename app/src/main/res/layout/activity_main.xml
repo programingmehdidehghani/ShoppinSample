@@ -1,126 +1,133 @@
 <?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.LoginActivity">
 
-    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:tools="http://schemas.android.com/tools"
+    <TextView
+        android:id="@+id/txt_eco_shop_in_login_activity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:gravity="center"
+        android:text="@string/login_title"
+        android:textColor="@color/text_login"
+        app:layout_constraintStart_toEndOf="@+id/iv_title_in_login_activity"
+        app:layout_constraintTop_toBottomOf="@+id/gl_top_in_login_activity" />
+
+    <ImageView
+        android:id="@+id/iv_title_in_login_activity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:scaleType="centerCrop"
+        android:src="@drawable/ve_image_top_login_activity"
+        app:layout_constraintBottom_toBottomOf="@id/txt_eco_shop_in_login_activity"
+        app:layout_constraintEnd_toStartOf="@+id/gl_start_in_login_activity"
+        app:layout_constraintTop_toTopOf="@+id/txt_eco_shop_in_login_activity" />
+
+    <TextView
+        android:id="@+id/txt_welcome_in_login_activity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:text="@string/txt_welcome_login_activity"
+        android:textColor="@color/purple_txt_login"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/iv_title_in_login_activity" />
+
+    <TextView
+        android:id="@+id/txt_description_in_login_activity"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="18dp"
+        android:layout_marginEnd="12dp"
+        android:gravity="center"
+        android:text="@string/content_login_activity"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txt_welcome_in_login_activity" />
+
+
+    <EditText
+        android:id="@+id/et_name_in_login_activity"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        tools:context=".ui.LoginActivity">
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="12dp"
+        android:background="@drawable/background_et_login_activity"
+        android:hint="@string/txt_user_name_login_activity"
+        android:padding="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txt_description_in_login_activity" />
 
-        <TextView
-            android:id="@+id/txt_eco_shop_in_login_activity"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/login_title"
-            android:textColor="@color/text_login"
-            android:gravity="center"
-            android:layout_marginStart="8dp"
-            app:layout_constraintTop_toBottomOf="@+id/gl_top_in_login_activity"
-            app:layout_constraintStart_toEndOf="@+id/iv_title_in_login_activity"
-            />
+    <EditText
+        android:id="@+id/et_pass_in_login_activity"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="12dp"
+        android:background="@drawable/background_et_login_activity"
+        android:hint="@string/txt_pass_login_activity"
+        android:inputType="textPassword"
+        android:padding="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/et_name_in_login_activity" />
 
-        <ImageView
-            android:id="@+id/iv_title_in_login_activity"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/ve_image_top_login_activity"
-            android:scaleType="centerCrop"
-            app:layout_constraintTop_toTopOf="@+id/txt_eco_shop_in_login_activity"
-            app:layout_constraintBottom_toBottomOf="@id/txt_eco_shop_in_login_activity"
-            app:layout_constraintEnd_toStartOf="@+id/gl_start_in_login_activity"
-            />
-
-        <TextView
-            android:id="@+id/txt_welcome_in_login_activity"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor="@color/purple_txt_login"
-            android:text="@string/txt_welcome_login_activity"
-            android:layout_marginTop="30dp"
-            android:textSize="14sp"
-            app:layout_constraintTop_toBottomOf="@+id/iv_title_in_login_activity"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"/>
-
-        <TextView
-            android:id="@+id/txt_description_in_login_activity"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="12dp"
-            android:layout_marginEnd="12dp"
-            android:layout_marginTop="18dp"
-            android:gravity="center"
-            android:text="@string/content_login_activity"
-            app:layout_constraintTop_toBottomOf="@+id/txt_welcome_in_login_activity"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"/>
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_login_in_login_activity"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="70dp"
+        android:layout_marginEnd="12dp"
+        android:backgroundTint="@color/purple_txt_login"
+        android:text="@string/txt_btn_login_activity"
+        app:cornerRadius="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/et_pass_in_login_activity" />
 
 
-        <EditText
-            android:id="@+id/et_name_in_login_activity"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="12dp"
-            android:layout_marginEnd="12dp"
-            android:layout_marginTop="40dp"
-            android:padding="8dp"
-            android:hint="@string/txt_user_name_login_activity"
-            android:background="@drawable/background_et_login_activity"
-            app:layout_constraintTop_toBottomOf="@+id/txt_description_in_login_activity"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"/>
+    <ProgressBar
+        android:id="@+id/progress_login_activity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"/>
 
-        <EditText
-            android:id="@+id/et_pass_in_login_activity"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="12dp"
-            android:layout_marginStart="12dp"
-            android:layout_marginTop="30dp"
-            android:padding="8dp"
-            android:inputType="textPassword"
-            android:hint="@string/txt_pass_login_activity"
-            android:background="@drawable/background_et_login_activity"
-            app:layout_constraintTop_toBottomOf="@+id/et_name_in_login_activity"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"/>
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/gl_top_in_login_activity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.13" />
 
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/btn_login_in_login_activity"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="12dp"
-            android:layout_marginEnd="12dp"
-            android:layout_marginTop="70dp"
-            app:cornerRadius="8dp"
-            android:backgroundTint="@color/purple_txt_login"
-            android:text="@string/txt_btn_login_activity"
-            app:layout_constraintTop_toBottomOf="@+id/et_pass_in_login_activity"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"/>
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/gl_end_in_login_activity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.75" />
 
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/gl_start_in_login_activity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.5" />
 
-        <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/gl_top_in_login_activity"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            app:layout_constraintGuide_percent="0.13"/>
-
-        <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/gl_end_in_login_activity"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            app:layout_constraintGuide_percent="0.75"/>
-
-        <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/gl_start_in_login_activity"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            app:layout_constraintGuide_percent="0.5"/>
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
 
 
