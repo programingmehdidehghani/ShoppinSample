@@ -22,7 +22,7 @@
         android:id="@+id/iv_title_in_login_activity"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@drawable/picture_image_top_login_activity_ve"
+        android:src="@drawable/ve_image_top_login_activity"
         android:scaleType="centerCrop"
         app:layout_constraintTop_toTopOf="@+id/txt_eco_shop_in_login_activity"
         app:layout_constraintBottom_toBottomOf="@id/txt_eco_shop_in_login_activity"
@@ -42,6 +42,7 @@
         app:layout_constraintEnd_toEndOf="parent"/>
 
     <TextView
+        android:id="@+id/txt_description_in_login_activity"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="12dp"
@@ -54,6 +55,47 @@
         app:layout_constraintEnd_toEndOf="parent"/>
 
 
+    <EditText
+        android:id="@+id/et_name_in_login_activity"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:layout_marginEnd="12dp"
+        android:layout_marginTop="40dp"
+        android:padding="8dp"
+        android:hint="@string/txt_user_name_login_activity"
+        android:background="@drawable/background_et_login_activity"
+        app:layout_constraintTop_toBottomOf="@+id/txt_description_in_login_activity"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <EditText
+        android:id="@+id/et_pass_in_login_activity"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="12dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="30dp"
+        android:padding="8dp"
+        android:inputType="textPassword"
+        android:hint="@string/txt_pass_login_activity"
+        android:background="@drawable/background_et_login_activity"
+        app:layout_constraintTop_toBottomOf="@+id/et_name_in_login_activity"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <com.google.android.material.button.MaterialButton
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:layout_marginEnd="12dp"
+        android:layout_marginTop="70dp"
+        app:cornerRadius="8dp"
+        android:backgroundTint="@color/purple_txt_login"
+        android:text="@string/txt_btn_login_activity"
+        app:layout_constraintTop_toBottomOf="@+id/et_pass_in_login_activity"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
 
 
     <androidx.constraintlayout.widget.Guideline

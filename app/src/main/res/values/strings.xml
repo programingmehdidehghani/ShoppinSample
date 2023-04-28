@@ -3,4 +3,9 @@
     <string name="login_title">ECOshop</string>
     <string name="content_login_activity">A Lorem Ipsum text generator is specifically designed to generate a dummy text or placeholder text.</string>
     <string name="txt_welcome_login_activity">Welcome back</string>
+    <string name="txt_user_name_login_activity">Username</string>
+    <string name="txt_pass_login_activity">password</string>
+    <string name="txt_btn_login_activity">Login</string>
+
+
 </resources>
