@@ -7,13 +7,36 @@
     tools:context=".LoginActivity">
 
     <TextView
+        android:id="@+id/txt_eco_shop_in_login_activity"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/login_title"
         android:textColor="@color/text_login"
         android:gravity="center"
-        app:layout_constraintEnd_toStartOf="@+id/gl_end_in_login_activity"
-        app:layout_constraintTop_toBottomOf="@+id/gl_top_in_login_activity" />
+        android:layout_marginStart="8dp"
+        app:layout_constraintTop_toBottomOf="@+id/gl_top_in_login_activity"
+        app:layout_constraintStart_toEndOf="@+id/iv_title_in_login_activity"
+        />
+
+    <ImageView
+        android:id="@+id/iv_title_in_login_activity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/picture_image_top_login_activity_ve"
+        android:scaleType="centerCrop"
+        app:layout_constraintTop_toTopOf="@+id/txt_eco_shop_in_login_activity"
+        app:layout_constraintBottom_toBottomOf="@id/txt_eco_shop_in_login_activity"
+        app:layout_constraintEnd_toStartOf="@+id/gl_start_in_login_activity"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+
+
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/gl_top_in_login_activity"
@@ -28,5 +51,12 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"
         app:layout_constraintGuide_percent="0.75"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/gl_start_in_login_activity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.5"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
