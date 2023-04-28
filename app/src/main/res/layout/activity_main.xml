@@ -9,10 +9,24 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:text="@string/login_title"
+        android:textColor="@color/text_login"
+        android:gravity="center"
+        app:layout_constraintEnd_toStartOf="@+id/gl_end_in_login_activity"
+        app:layout_constraintTop_toBottomOf="@+id/gl_top_in_login_activity" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/gl_top_in_login_activity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.13"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/gl_end_in_login_activity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.75"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
