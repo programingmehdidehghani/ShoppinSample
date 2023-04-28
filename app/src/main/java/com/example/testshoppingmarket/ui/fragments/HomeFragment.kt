@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.viewpager.widget.ViewPager
 import com.example.testshoppingmarket.R
 import com.example.testshoppingmarket.databinding.LayoutHomeFragmentBinding
 import com.example.testshoppingmarket.databinding.LayoutMainActivityBinding
@@ -28,5 +29,7 @@ class HomeFragment: Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
     }
+
+
 
 }
