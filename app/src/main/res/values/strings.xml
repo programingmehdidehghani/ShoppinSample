@@ -2,5 +2,5 @@
     <string name="app_name">TestShoppingMarket</string>
     <string name="login_title">ECOshop</string>
     <string name="content_login_activity">A Lorem Ipsum text generator is specifically designed to generate a dummy text or placeholder text.</string>
-
+    <string name="txt_welcome_login_activity">Welcome back</string>
 </resources>
