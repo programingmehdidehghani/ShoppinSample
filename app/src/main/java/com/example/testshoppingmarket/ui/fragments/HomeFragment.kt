@@ -6,12 +6,12 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.testshoppingmarket.adapters.CategoriesNameAdapter
 import com.example.testshoppingmarket.databinding.LayoutHomeFragmentBinding
+import com.example.testshoppingmarket.model.CategoriesHeader
 import com.example.testshoppingmarket.ui.viewModel.HomeFragmentViewModel
 import com.example.testshoppingmarket.utils.Resource
 import com.example.testshoppingmarket.utils.toast
@@ -26,7 +26,7 @@ class HomeFragment : Fragment() {
     @OptIn(ExperimentalCoroutinesApi::class)
     private lateinit var homeFragmentViewModel: HomeFragmentViewModel
     private lateinit var binding: LayoutHomeFragmentBinding
-
+    private var categoriesName: ArrayList<CategoriesHeader> = arrayListOf()
 
        override fun onCreateView(
            inflater: LayoutInflater,
@@ -42,10 +42,8 @@ class HomeFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         homeFragmentViewModel = ViewModelProvider(requireActivity()).get(HomeFragmentViewModel::class.java)
-
         getCategoriesName()
-
-        //setUpCategoriesNameRecyclerView()
+        setUpCategoriesNameRecyclerView()
     }
 
     @OptIn(ExperimentalCoroutinesApi::class)
@@ -57,7 +55,8 @@ class HomeFragment : Fragment() {
                      response.data?.let{
                          hideProgress()
                          toast(requireContext(),"get categories name {${it}")
-                         //  categoriesNameAdapter.updateList(response.data)
+                         categoriesName.addAll(listOf(it))
+                         categoriesNameAdapter.updateList(categoriesName)
                      }
                 }
                 is Resource.Error -> {

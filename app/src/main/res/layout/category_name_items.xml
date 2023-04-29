@@ -5,77 +5,17 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <TextView
-        android:id="@+id/txt_electronics_in_items_category"
-        app:layout_constraintStart_toEndOf="@+id/gl_end_in_items_category_name"
+        android:id="@+id/txt_name_category_in_items_category"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
-        android:gravity="center"
-        android:text="electronics"
-        android:textSize="15sp"
-        android:textStyle="bold"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
-
-    <TextView
-        android:id="@+id/txt_jewelery_in_items_category"
-        app:layout_constraintStart_toEndOf="@+id/gl_second_start_in_items_category_name"
-        app:layout_constraintEnd_toStartOf="@+id/gl_end_in_items_category_name"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        android:gravity="center"
-        android:text="jewelery"
-        android:textSize="15sp"
-        android:textStyle="bold"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
-
-    <TextView
-        android:id="@+id/txt_mans_clothes_in_items_category"
-        app:layout_constraintStart_toEndOf="@+id/gl_start_in_items_category_name"
-        app:layout_constraintEnd_toStartOf="@+id/gl_second_start_in_items_category_name"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        android:gravity="center"
-        android:text="men's clothing"
-        android:textSize="15sp"
-        android:textStyle="bold"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
-
-    <TextView
-        android:id="@+id/txt_womens_clothes_in_items_category"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/gl_start_in_items_category_name"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
         android:gravity="center"
-        android:text="women's clothing"
         android:textSize="15sp"
         android:textStyle="bold"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
 
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/gl_end_in_items_category_name"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.77"/>
 
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/gl_second_start_in_items_category_name"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.58"/>
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/gl_start_in_items_category_name"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.29"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

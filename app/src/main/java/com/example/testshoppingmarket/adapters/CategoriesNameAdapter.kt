@@ -11,6 +11,7 @@ import com.example.testshoppingmarket.model.CategoriesHeader
 /*interface OnItemClickCallback {
     fun onItemClick(symbol: String)
 }*/
+@Suppress("DEPRECATION")
 class CategoriesNameAdapter(/*private val onItemClickCallback: OnItemClickCallback*/) :
     RecyclerView.Adapter<CategoriesNameAdapter.CategoriesViewHolder>() {
 
@@ -39,11 +40,7 @@ class CategoriesNameAdapter(/*private val onItemClickCallback: OnItemClickCallba
 
     inner class CategoriesViewHolder(private val binding: CategoryNameItemsBinding) : RecyclerView.ViewHolder(binding.root){
         fun bind(model: CategoriesHeader/*, onItemClickCallback: OnItemClickCallback*/) {
-/*            binding.txtJeweleryInItemsCategory.text = model.jewelery
-            binding.txtElectronicsInItemsCategory.text = model.electronics
-            binding.txtMansClothesInItemsCategory.text = model.menClothing
-            binding.txtWomensClothesInItemsCategory.text = model.womenClothing*/
-
+                binding.txtNameCategoryInItemsCategory.text = model.get(position)
 
 
 
