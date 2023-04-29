@@ -6,6 +6,7 @@
     <string name="txt_user_name_login_activity">Username</string>
     <string name="txt_pass_login_activity">password</string>
     <string name="txt_btn_login_activity">Login</string>
+    <string name="txt_btn_product_category">clothes</string>
 
 
 </resources>
