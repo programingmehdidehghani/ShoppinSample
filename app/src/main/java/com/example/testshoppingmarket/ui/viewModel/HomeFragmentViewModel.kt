@@ -8,6 +8,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
 import com.example.testshoppingmarket.App
 import com.example.testshoppingmarket.model.CategoriesHeader
+import com.example.testshoppingmarket.model.ProductsCategory
 import com.example.testshoppingmarket.repository.CategoriesRepository
 import com.example.testshoppingmarket.utils.Resource
 import com.example.testshoppingmarket.utils.hasInternetConnection
@@ -29,8 +30,13 @@ class HomeFragmentViewModel @Inject constructor(
     private val _getCategoriesName = MutableLiveData<Resource<CategoriesHeader>>()
     val getCategoriesName : LiveData<Resource<CategoriesHeader>> = _getCategoriesName
 
+    private val _getProductCategory = MutableLiveData<Resource<ProductsCategory>>()
+    val getProductCategory : LiveData<Resource<ProductsCategory>> = _getProductCategory
+    private
+
     fun getCategoriesName() = viewModelScope.launch {
         getCategories()
+        //getProductCategory(category)
     }
 
     private suspend fun getCategories(){
@@ -66,6 +72,10 @@ class HomeFragmentViewModel @Inject constructor(
                 }
             }
         }
+    }
+
+    private suspend fun getProductCategory(category: String){
+
     }
 
 }

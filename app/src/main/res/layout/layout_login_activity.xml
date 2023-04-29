@@ -11,6 +11,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
+        android:src="@drawable/ecoshop"
         android:gravity="center"
         app:layout_constraintStart_toEndOf="@+id/iv_title_in_login_activity"
         app:layout_constraintTop_toBottomOf="@+id/gl_top_in_login_activity" />
@@ -20,7 +21,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:scaleType="centerCrop"
-        android:src="@drawable/ve_image_top_login_activity"
+        android:src="@drawable/group2"
         app:layout_constraintBottom_toBottomOf="@id/txt_eco_shop_in_login_activity"
         app:layout_constraintEnd_toStartOf="@+id/gl_start_in_login_activity"
         app:layout_constraintTop_toTopOf="@+id/txt_eco_shop_in_login_activity" />
