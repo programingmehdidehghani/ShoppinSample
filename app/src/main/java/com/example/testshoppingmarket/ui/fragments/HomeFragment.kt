@@ -11,8 +11,10 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.testshoppingmarket.adapters.CategoriesNameAdapter
 import com.example.testshoppingmarket.adapters.OnItemClickCallback
+import com.example.testshoppingmarket.adapters.ProductCategoryAdapter
 import com.example.testshoppingmarket.databinding.LayoutHomeFragmentBinding
 import com.example.testshoppingmarket.model.CategoriesHeader
+import com.example.testshoppingmarket.model.ProductsCategory
 import com.example.testshoppingmarket.ui.viewModel.HomeFragmentViewModel
 import com.example.testshoppingmarket.utils.Resource
 import com.example.testshoppingmarket.utils.toast
@@ -24,10 +26,13 @@ class HomeFragment : Fragment(), OnItemClickCallback {
 
 
     private val categoriesNameAdapter = CategoriesNameAdapter(this)
+    private val productCategoryAdapter = ProductCategoryAdapter()
+
     @OptIn(ExperimentalCoroutinesApi::class)
     private lateinit var homeFragmentViewModel: HomeFragmentViewModel
     private lateinit var binding: LayoutHomeFragmentBinding
     private var categoriesName: ArrayList<CategoriesHeader> = arrayListOf()
+    private var productCategory: ArrayList<ProductsCategory> = arrayListOf()
 
        override fun onCreateView(
            inflater: LayoutInflater,
@@ -86,6 +91,15 @@ class HomeFragment : Fragment(), OnItemClickCallback {
         }
     }
 
+    private fun setUpProductCategoryRecyclerView(){
+        var layoutManager
+                = LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
+        binding.rvProductCategoryHomeFragment.apply {
+            this.layoutManager = layoutManager
+            adapter = productCategoryAdapter
+        }
+    }
+
     fun showProgress() {
         binding.pbCategoryInHomeFragment.visibility = View.VISIBLE
     }
@@ -99,6 +113,7 @@ class HomeFragment : Fragment(), OnItemClickCallback {
         toast(requireContext(),"click {$category}")
         homeFragmentViewModel.getProductCategoryShow(category)
         getProductCategory()
+        setUpProductCategoryRecyclerView()
     }
 
     @OptIn(ExperimentalCoroutinesApi::class)
@@ -108,11 +123,10 @@ class HomeFragment : Fragment(), OnItemClickCallback {
                 is Resource.Success ->{
                     response.data?.let{
                         hideProgress()
-                        toast(requireContext(),"get categories name {${it}")
-                       /* for (i in it){
-                            categoriesName.add(it)
+                        for (i in it){
+                            productCategory.add(it)
                         }
-                        categoriesNameAdapter.updateList(categoriesName)*/
+                        productCategoryAdapter.updateList(productCategory)
                     }
                 }
                 is Resource.Error -> {
