@@ -32,7 +32,6 @@ class HomeFragmentViewModel @Inject constructor(
 
     private val _getProductCategory = MutableLiveData<Resource<ProductsCategory>>()
     val getProductCategory : LiveData<Resource<ProductsCategory>> = _getProductCategory
-    private
 
     fun getCategoriesName() = viewModelScope.launch {
         getCategories()

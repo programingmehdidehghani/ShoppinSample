@@ -55,7 +55,10 @@ class HomeFragment : Fragment() {
                      response.data?.let{
                          hideProgress()
                          toast(requireContext(),"get categories name {${it}")
-                         categoriesName.addAll(listOf(it))
+                         for (i in it){
+                             toast(requireContext(),"fff")
+                             categoriesName.add(it)
+                         }
                          categoriesNameAdapter.updateList(categoriesName)
                      }
                 }
