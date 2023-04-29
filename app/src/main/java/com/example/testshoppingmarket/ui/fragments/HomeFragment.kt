@@ -44,8 +44,18 @@ class HomeFragment: Fragment() {
                 is Resource.Success ->{
 
                 }
+                is Resource.Error -> {
+
+                }
+                is Resource.Loading -> {
+
+                }
             }
         })
+
+    }
+
+    fun setUpCategoriesNameRecyclerView(){
 
     }
 
