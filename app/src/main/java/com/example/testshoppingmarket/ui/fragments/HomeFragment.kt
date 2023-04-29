@@ -94,8 +94,39 @@ class HomeFragment : Fragment(), OnItemClickCallback {
         binding.pbCategoryInHomeFragment.visibility = View.GONE
     }
 
-    override fun onItemClick(symbol: String) {
-        toast(requireContext(),"click {$symbol}")
+    @OptIn(ExperimentalCoroutinesApi::class)
+    override fun onItemClick(category: String) {
+        toast(requireContext(),"click {$category}")
+        homeFragmentViewModel.getProductCategoryShow(category)
+        getProductCategory()
+    }
+
+    @OptIn(ExperimentalCoroutinesApi::class)
+    fun getProductCategory(){
+        homeFragmentViewModel.getProductCategory.observe(viewLifecycleOwner, Observer { response ->
+            when(response){
+                is Resource.Success ->{
+                    response.data?.let{
+                        hideProgress()
+                        toast(requireContext(),"get categories name {${it}")
+                       /* for (i in it){
+                            categoriesName.add(it)
+                        }
+                        categoriesNameAdapter.updateList(categoriesName)*/
+                    }
+                }
+                is Resource.Error -> {
+                    response.errorMessage.let {
+                        toast(requireContext(),"error for categories name {${it}")
+                        Log.i("category","error is  .."+it)
+                        hideProgress()
+                    }
+                }
+                is Resource.Loading -> {
+                    showProgress()
+                }
+            }
+        })
     }
 
 

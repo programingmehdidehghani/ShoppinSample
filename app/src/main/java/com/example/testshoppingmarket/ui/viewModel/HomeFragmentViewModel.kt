@@ -35,7 +35,10 @@ class HomeFragmentViewModel @Inject constructor(
 
     fun getCategoriesName() = viewModelScope.launch {
         getCategories()
-        //getProductCategory(category)
+    }
+
+    fun getProductCategoryShow(category: String) = viewModelScope.launch {
+        getProductCategory(category)
     }
 
     private suspend fun getCategories(){
@@ -74,7 +77,38 @@ class HomeFragmentViewModel @Inject constructor(
     }
 
     private suspend fun getProductCategory(category: String){
+        _getProductCategory.postValue(Resource.Loading)
+        try {
+            if (hasInternetConnection<App>()) {
+                val response = repository.getProductCategory(category)
+                if (response.isSuccessful) {
+                    if (response.body() != null) {
+                        _getProductCategory.postValue(Resource.Success(response.body()!!))
+                    }
+                } else {
+                    _getProductCategory.postValue(Resource.Error(response.message()))
+                    Log.i("category","error is  .."+response.message())
+                    Resource.Error(response.message())
+                }
+            } else {
+                _getProductCategory.postValue(Resource.Error("No Internet Connection.!"))
+                Log.i("category","error is  ..")
+                toast(getApplication(), "No Internet Connection.!")
 
+            }
+        } catch (e: HttpException) {
+            toast(getApplication(), "Exception ${e.message}")
+            _getProductCategory.postValue(Resource.Error(e.message()))
+            Log.i("category","error is  .."+e.message())
+        } catch (t: Throwable) {
+            when (t) {
+                is IOException -> {
+                    toast(getApplication(), "Exception ${t.message}")
+                    _getProductCategory.postValue(Resource.Error(t.message!!))
+                    Log.i("category","error is  .."+t.message)
+                }
+            }
+        }
     }
 
 }
