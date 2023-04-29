@@ -17,6 +17,6 @@ interface ApiService {
     ): Response<LoginResponse>
 
     @GET("products/categories")
-    suspend fun gerCategories(): Response<CategoriesResponse>
+    suspend fun gerCategories(): Response<List<CategoriesResponse>>
 
 }

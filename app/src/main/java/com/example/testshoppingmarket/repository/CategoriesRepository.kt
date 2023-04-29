@@ -9,7 +9,7 @@ class CategoriesRepository @Inject constructor(
     private val apiService: ApiService
 ) {
 
-    suspend fun getCategoriesName(): Response<CategoriesResponse> {
+    suspend fun getCategoriesName(): Response<List<CategoriesResponse>> {
         return apiService.gerCategories()
     }
 }

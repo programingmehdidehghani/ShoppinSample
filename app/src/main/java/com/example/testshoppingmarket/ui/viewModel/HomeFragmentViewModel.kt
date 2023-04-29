@@ -13,19 +13,21 @@ import com.example.testshoppingmarket.utils.Resource
 import com.example.testshoppingmarket.utils.hasInternetConnection
 import com.example.testshoppingmarket.utils.toast
 import dagger.hilt.android.lifecycle.HiltViewModel
+import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.launch
 import retrofit2.HttpException
 import java.io.IOException
 import javax.inject.Inject
 
+@ExperimentalCoroutinesApi
 @HiltViewModel
 class HomeFragmentViewModel @Inject constructor(
     application: Application,
     private val repository: CategoriesRepository
 ): AndroidViewModel(application) {
 
-    private val _getCategoriesName = MutableLiveData<Resource<CategoriesResponse>>()
-    val getCategoriesName : LiveData<Resource<CategoriesResponse>> = _getCategoriesName
+    private val _getCategoriesName = MutableLiveData<Resource<List<CategoriesResponse>>>()
+    val getCategoriesName : LiveData<Resource<List<CategoriesResponse>>> = _getCategoriesName
 
     fun getCategoriesName() = viewModelScope.launch {
         getCategories()

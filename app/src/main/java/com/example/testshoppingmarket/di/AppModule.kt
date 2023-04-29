@@ -1,10 +1,13 @@
 package com.example.testshoppingmarket.di
 
+import android.content.Context
+import com.example.testshoppingmarket.App
 import com.example.testshoppingmarket.api.ApiService
 import com.example.testshoppingmarket.utils.Constants.Companion.BASE_URL
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
+import dagger.hilt.android.qualifiers.ApplicationContext
 import dagger.hilt.components.SingletonComponent
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
@@ -25,4 +28,5 @@ object AppModule {
             .build()
             .create()
     }
+
 }

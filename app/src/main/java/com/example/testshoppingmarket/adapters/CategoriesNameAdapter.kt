@@ -8,10 +8,10 @@ import com.example.testshoppingmarket.databinding.CategoryNameItemsBinding
 import com.example.testshoppingmarket.model.CategoriesResponse
 
 
-interface OnItemClickCallback {
+/*interface OnItemClickCallback {
     fun onItemClick(symbol: String)
-}
-class CategoriesNameAdapter(private val onItemClickCallback: OnItemClickCallback) :
+}*/
+class CategoriesNameAdapter(/*private val onItemClickCallback: OnItemClickCallback*/) :
     RecyclerView.Adapter<CategoriesNameAdapter.CategoriesViewHolder>() {
 
 
@@ -27,7 +27,7 @@ class CategoriesNameAdapter(private val onItemClickCallback: OnItemClickCallback
     override fun getItemCount(): Int = categoriesName.size
 
     override fun onBindViewHolder(holder: CategoriesViewHolder, position: Int) {
-        holder.bind(categoriesName[position],onItemClickCallback)
+        holder.bind(categoriesName[position],/*onItemClickCallback*/)
     }
 
     @SuppressLint("NotifyDataSetChanged")
@@ -38,7 +38,7 @@ class CategoriesNameAdapter(private val onItemClickCallback: OnItemClickCallback
     }
 
     inner class CategoriesViewHolder(private val binding: CategoryNameItemsBinding) : RecyclerView.ViewHolder(binding.root){
-        fun bind(model: CategoriesResponse, onItemClickCallback: OnItemClickCallback) {
+        fun bind(model: CategoriesResponse/*, onItemClickCallback: OnItemClickCallback*/) {
             binding.txtJeweleryInItemsCategory.text = model.jewelery
             binding.txtElectronicsInItemsCategory.text = model.electronics
             binding.txtMansClothesInItemsCategory.text = model.menClothing
@@ -47,12 +47,11 @@ class CategoriesNameAdapter(private val onItemClickCallback: OnItemClickCallback
 
 
 
-            itemView.setOnClickListener {
+       /*     itemView.setOnClickListener {
                 onItemClickCallback.onItemClick(
-                    model.symbol,
-                    model.id ?: model.symbol
+                    model.electronics.toString()
                 )
-            }
+            }*/
         }
     }
 
