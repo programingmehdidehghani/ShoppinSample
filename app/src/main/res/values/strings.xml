@@ -7,6 +7,7 @@
     <string name="txt_pass_login_activity">password</string>
     <string name="txt_btn_login_activity">Login</string>
     <string name="txt_btn_product_category">clothes</string>
+    <string name="txt_btn_add_product">Add Product</string>
 
 
 </resources>
