@@ -10,7 +10,11 @@ import com.example.testshoppingmarket.model.CategoriesHeader
 import com.example.testshoppingmarket.model.ProductsCategory
 import com.example.testshoppingmarket.utils.ImageLoader
 
-class ProductCategoryAdapter : RecyclerView.Adapter<ProductCategoryAdapter.ProductCategoriesViewHolder>() {
+interface OnItemClickCallbackProductCategory {
+    fun onItemClick(id: String)
+}
+class ProductCategoryAdapter (private val onItemClickCallback: OnItemClickCallbackProductCategory) :
+    RecyclerView.Adapter<ProductCategoryAdapter.ProductCategoriesViewHolder>() {
 
     private val productsCategory: ArrayList<ProductsCategory> = arrayListOf()
 
@@ -32,19 +36,21 @@ class ProductCategoryAdapter : RecyclerView.Adapter<ProductCategoryAdapter.Produ
     }
 
     override fun onBindViewHolder(holder: ProductCategoriesViewHolder, position: Int) {
-        holder.bind(productsCategory[position])
+        holder.bind(productsCategory[position],onItemClickCallback)
     }
 
     @Suppress("DEPRECATION")
     inner class ProductCategoriesViewHolder(private val binding: ProductCategoryItemsBinding) : RecyclerView.ViewHolder(binding.root){
-        fun bind(model: ProductsCategory/*, onItemClickCallback: OnItemClickCallback*/) {
+        fun bind(model: ProductsCategory, onItemClickCallback: OnItemClickCallbackProductCategory) {
             binding.txtDescriptionProductCategory.text = model.get(position).description
             ImageLoader.loadImage(binding.ivPictureProductInProductCategory, model.get(position).image)
             binding.txtTitleProductCtegory.text = model.get(position).title
             binding.txtPriceProductCategory.text = model.get(position).price.toString()
 
             itemView.setOnClickListener {
-
+                onItemClickCallback.onItemClick(
+                    model.get(position).id.toString()
+                )
             }
         }
     }

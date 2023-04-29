@@ -11,6 +11,7 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.testshoppingmarket.adapters.CategoriesNameAdapter
 import com.example.testshoppingmarket.adapters.OnItemClickCallback
+import com.example.testshoppingmarket.adapters.OnItemClickCallbackProductCategory
 import com.example.testshoppingmarket.adapters.ProductCategoryAdapter
 import com.example.testshoppingmarket.databinding.LayoutHomeFragmentBinding
 import com.example.testshoppingmarket.model.CategoriesHeader
@@ -22,11 +23,11 @@ import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 
 @AndroidEntryPoint
-class HomeFragment : Fragment(), OnItemClickCallback {
+class HomeFragment : Fragment(), OnItemClickCallback , OnItemClickCallbackProductCategory {
 
 
     private val categoriesNameAdapter = CategoriesNameAdapter(this)
-    private val productCategoryAdapter = ProductCategoryAdapter()
+    private val productCategoryAdapter = ProductCategoryAdapter(this)
 
     @OptIn(ExperimentalCoroutinesApi::class)
     private lateinit var homeFragmentViewModel: HomeFragmentViewModel
@@ -115,6 +116,8 @@ class HomeFragment : Fragment(), OnItemClickCallback {
         getProductCategory()
         setUpProductCategoryRecyclerView()
     }
+
+
 
     @OptIn(ExperimentalCoroutinesApi::class)
     fun getProductCategory(){
