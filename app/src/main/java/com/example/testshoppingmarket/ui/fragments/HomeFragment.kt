@@ -10,6 +10,7 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.testshoppingmarket.adapters.CategoriesNameAdapter
+import com.example.testshoppingmarket.adapters.OnItemClickCallback
 import com.example.testshoppingmarket.databinding.LayoutHomeFragmentBinding
 import com.example.testshoppingmarket.model.CategoriesHeader
 import com.example.testshoppingmarket.ui.viewModel.HomeFragmentViewModel
@@ -19,10 +20,10 @@ import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 
 @AndroidEntryPoint
-class HomeFragment : Fragment() {
+class HomeFragment : Fragment(), OnItemClickCallback {
 
 
-    private val categoriesNameAdapter = CategoriesNameAdapter()
+    private val categoriesNameAdapter = CategoriesNameAdapter(this)
     @OptIn(ExperimentalCoroutinesApi::class)
     private lateinit var homeFragmentViewModel: HomeFragmentViewModel
     private lateinit var binding: LayoutHomeFragmentBinding
@@ -56,7 +57,6 @@ class HomeFragment : Fragment() {
                          hideProgress()
                          toast(requireContext(),"get categories name {${it}")
                          for (i in it){
-                             toast(requireContext(),"fff")
                              categoriesName.add(it)
                          }
                          categoriesNameAdapter.updateList(categoriesName)
@@ -94,6 +94,9 @@ class HomeFragment : Fragment() {
         binding.pbCategoryInHomeFragment.visibility = View.GONE
     }
 
+    override fun onItemClick(symbol: String) {
+        toast(requireContext(),"click {$symbol}")
+    }
 
 
 }

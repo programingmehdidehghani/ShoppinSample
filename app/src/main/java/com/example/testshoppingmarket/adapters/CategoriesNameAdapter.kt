@@ -8,11 +8,11 @@ import com.example.testshoppingmarket.databinding.CategoryNameItemsBinding
 import com.example.testshoppingmarket.model.CategoriesHeader
 
 
-/*interface OnItemClickCallback {
+interface OnItemClickCallback {
     fun onItemClick(symbol: String)
-}*/
+}
 @Suppress("DEPRECATION")
-class CategoriesNameAdapter(/*private val onItemClickCallback: OnItemClickCallback*/) :
+class CategoriesNameAdapter(private val onItemClickCallback: OnItemClickCallback) :
     RecyclerView.Adapter<CategoriesNameAdapter.CategoriesViewHolder>() {
 
 
@@ -28,7 +28,7 @@ class CategoriesNameAdapter(/*private val onItemClickCallback: OnItemClickCallba
     override fun getItemCount(): Int = categoriesName.size
 
     override fun onBindViewHolder(holder: CategoriesViewHolder, position: Int) {
-        holder.bind(categoriesName[position],/*onItemClickCallback*/)
+        holder.bind(categoriesName[position],onItemClickCallback)
     }
 
     @SuppressLint("NotifyDataSetChanged")
@@ -39,16 +39,16 @@ class CategoriesNameAdapter(/*private val onItemClickCallback: OnItemClickCallba
     }
 
     inner class CategoriesViewHolder(private val binding: CategoryNameItemsBinding) : RecyclerView.ViewHolder(binding.root){
-        fun bind(model: CategoriesHeader/*, onItemClickCallback: OnItemClickCallback*/) {
+        fun bind(model: CategoriesHeader,onItemClickCallback: OnItemClickCallback) {
                 binding.txtNameCategoryInItemsCategory.text = model.get(position)
 
 
 
-       /*     itemView.setOnClickListener {
+            itemView.setOnClickListener {
                 onItemClickCallback.onItemClick(
-                    model.electronics.toString()
+                    model.get(position)
                 )
-            }*/
+            }
         }
     }
 
