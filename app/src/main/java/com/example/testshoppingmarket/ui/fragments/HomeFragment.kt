@@ -1,6 +1,7 @@
 package com.example.testshoppingmarket.ui.fragments
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -8,6 +9,7 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.testshoppingmarket.adapters.CategoriesNameAdapter
 import com.example.testshoppingmarket.databinding.LayoutHomeFragmentBinding
 import com.example.testshoppingmarket.ui.viewModel.HomeFragmentViewModel
@@ -24,7 +26,7 @@ class HomeFragment : Fragment() {
     @OptIn(ExperimentalCoroutinesApi::class)
     private lateinit var homeFragmentViewModel: HomeFragmentViewModel
     private lateinit var binding: LayoutHomeFragmentBinding
-    
+
 
        override fun onCreateView(
            inflater: LayoutInflater,
@@ -53,30 +55,42 @@ class HomeFragment : Fragment() {
             when(response){
                 is Resource.Success ->{
                      response.data?.let{
-                         categoriesNameAdapter.updateList(response.data)
+                         hideProgress()
+                         toast(requireContext(),"get categories name {${it}")
+                         //  categoriesNameAdapter.updateList(response.data)
                      }
                 }
                 is Resource.Error -> {
                    response.errorMessage.let {
                        toast(requireContext(),"error for categories name {${it}")
+                       Log.i("category","error is  .."+it)
+                       hideProgress()
                    }
                 }
                 is Resource.Loading -> {
-
+                    showProgress()
                 }
             }
         })
 
     }
 
-/*    private fun setUpCategoriesNameRecyclerView(){
+    private fun setUpCategoriesNameRecyclerView(){
         var layoutManager
                 = LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
-        viewBinding.rvCategoriesNameInHomeFragment.apply {
+        binding.rvCategoriesNameInHomeFragment.apply {
             this.layoutManager = layoutManager
             adapter = categoriesNameAdapter
         }
-    }*/
+    }
+
+    fun showProgress() {
+        binding.pbCategoryInHomeFragment.visibility = View.VISIBLE
+    }
+
+    fun hideProgress() {
+        binding.pbCategoryInHomeFragment.visibility = View.GONE
+    }
 
 
 

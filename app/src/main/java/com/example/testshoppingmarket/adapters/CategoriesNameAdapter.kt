@@ -5,7 +5,7 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.testshoppingmarket.databinding.CategoryNameItemsBinding
-import com.example.testshoppingmarket.model.CategoriesResponse
+import com.example.testshoppingmarket.model.CategoriesHeader
 
 
 /*interface OnItemClickCallback {
@@ -15,7 +15,7 @@ class CategoriesNameAdapter(/*private val onItemClickCallback: OnItemClickCallba
     RecyclerView.Adapter<CategoriesNameAdapter.CategoriesViewHolder>() {
 
 
-    private val categoriesName: ArrayList<CategoriesResponse> = arrayListOf()
+    private val categoriesName: ArrayList<CategoriesHeader> = arrayListOf()
 
 
 
@@ -31,18 +31,18 @@ class CategoriesNameAdapter(/*private val onItemClickCallback: OnItemClickCallba
     }
 
     @SuppressLint("NotifyDataSetChanged")
-    fun updateList(list: List<CategoriesResponse>) {
+    fun updateList(list: List<CategoriesHeader>) {
         this.categoriesName.clear()
         this.categoriesName.addAll(list)
         notifyDataSetChanged()
     }
 
     inner class CategoriesViewHolder(private val binding: CategoryNameItemsBinding) : RecyclerView.ViewHolder(binding.root){
-        fun bind(model: CategoriesResponse/*, onItemClickCallback: OnItemClickCallback*/) {
-            binding.txtJeweleryInItemsCategory.text = model.jewelery
+        fun bind(model: CategoriesHeader/*, onItemClickCallback: OnItemClickCallback*/) {
+/*            binding.txtJeweleryInItemsCategory.text = model.jewelery
             binding.txtElectronicsInItemsCategory.text = model.electronics
             binding.txtMansClothesInItemsCategory.text = model.menClothing
-            binding.txtWomensClothesInItemsCategory.text = model.womenClothing
+            binding.txtWomensClothesInItemsCategory.text = model.womenClothing*/
 
 
 

@@ -1,13 +1,13 @@
 package com.example.testshoppingmarket.ui.viewModel
 
 import android.app.Application
+import android.util.Log
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.testshoppingmarket.App
-import com.example.testshoppingmarket.model.CategoriesResponse
+import com.example.testshoppingmarket.model.CategoriesHeader
 import com.example.testshoppingmarket.repository.CategoriesRepository
 import com.example.testshoppingmarket.utils.Resource
 import com.example.testshoppingmarket.utils.hasInternetConnection
@@ -26,8 +26,8 @@ class HomeFragmentViewModel @Inject constructor(
     private val repository: CategoriesRepository
 ): AndroidViewModel(application) {
 
-    private val _getCategoriesName = MutableLiveData<Resource<List<CategoriesResponse>>>()
-    val getCategoriesName : LiveData<Resource<List<CategoriesResponse>>> = _getCategoriesName
+    private val _getCategoriesName = MutableLiveData<Resource<CategoriesHeader>>()
+    val getCategoriesName : LiveData<Resource<CategoriesHeader>> = _getCategoriesName
 
     fun getCategoriesName() = viewModelScope.launch {
         getCategories()
@@ -44,20 +44,25 @@ class HomeFragmentViewModel @Inject constructor(
                     }
                 } else {
                     _getCategoriesName.postValue(Resource.Error(response.message()))
+                    Log.i("category","error is  .."+response.message())
                     Resource.Error(response.message())
                 }
             } else {
                 _getCategoriesName.postValue(Resource.Error("No Internet Connection.!"))
+                Log.i("category","error is  ..")
                 toast(getApplication(), "No Internet Connection.!")
+
             }
         } catch (e: HttpException) {
             toast(getApplication(), "Exception ${e.message}")
             _getCategoriesName.postValue(Resource.Error(e.message()))
+            Log.i("category","error is  .."+e.message())
         } catch (t: Throwable) {
             when (t) {
                 is IOException -> {
                     toast(getApplication(), "Exception ${t.message}")
                     _getCategoriesName.postValue(Resource.Error(t.message!!))
+                    Log.i("category","error is  .."+t.message)
                 }
             }
         }

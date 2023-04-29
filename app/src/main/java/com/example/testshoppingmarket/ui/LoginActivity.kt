@@ -30,7 +30,7 @@ class LoginActivity : AppCompatActivity() {
         setContentView(viewBinding.root)
 
         viewBinding.btnLoginInLoginActivity.setOnClickListener {
-/*            if (viewBinding.etNameInLoginActivity.text.toString().isNotEmpty() && viewBinding.etPassInLoginActivity.text.toString().isNotEmpty()) {
+   /*         if (viewBinding.etNameInLoginActivity.text.toString().isNotEmpty() && viewBinding.etPassInLoginActivity.text.toString().isNotEmpty()) {
                 val loginRequest = LoginRequest(
                     viewBinding.etNameInLoginActivity.text.toString(),
                     viewBinding.etPassInLoginActivity.text.toString()
@@ -44,7 +44,7 @@ class LoginActivity : AppCompatActivity() {
                                 toast(this,it.token)*/
                                 val intent = Intent(this,MainActivity::class.java)
                                 startActivity(intent)
-     /*                       }
+            /*                }
                         }
                         is Resource.Error -> {
                             hideProgress()
