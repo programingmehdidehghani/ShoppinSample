@@ -6,8 +6,9 @@
 
    <androidx.recyclerview.widget.RecyclerView
        android:layout_width="match_parent"
-       android:layout_height="wrap_content"
+       android:layout_height="0dp"
        android:layout_margin="12dp"
+       app:layout_constraintBottom_toTopOf="@+id/gl_bottom_tl_in_home_fragment"
        app:layout_constraintTop_toTopOf="parent"
        app:layout_constraintStart_toStartOf="parent"
        app:layout_constraintEnd_toEndOf="parent"/>
@@ -17,6 +18,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.3"/>
+        app:layout_constraintGuide_percent="0.08"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
