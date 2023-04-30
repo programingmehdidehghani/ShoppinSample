@@ -5,7 +5,6 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     app:cardCornerRadius="12dp"
     app:cardElevation="8dp"
-    android:layout_margin="5dp"
     app:cardPreventCornerOverlap="true">
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -39,7 +38,7 @@
             android:scaleType="centerCrop"
             android:layout_marginRight="18dp"
             android:layout_marginLeft="18dp"
-            app:layout_constraintBottom_toTopOf="@+id/gl_under_picture_in_dialog_detail_product"
+            app:layout_constraintBottom_toTopOf="@+id/txt_title_dialog_detail_product"
             app:layout_constraintTop_toBottomOf="@+id/toolbar_title_in_detail_product"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"/>
@@ -59,6 +58,8 @@
             android:layout_marginLeft="18dp"
             android:layout_marginRight="12dp"
             android:textStyle="bold"
+            android:maxLines="3"
+            android:ellipsize="end"
             app:layout_constraintTop_toBottomOf="@+id/iv_image_detail_product"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -69,6 +70,8 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="12dp"
+            android:maxLines="3"
+            android:ellipsize="end"
             android:textColor="@color/gray_txt_add_product"
             android:layout_marginLeft="18dp"
             android:layout_marginRight="12dp"
@@ -84,10 +87,12 @@
             android:textColor="@color/black"
             android:layout_marginTop="12dp"
             android:layout_marginLeft="18dp"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/txt_description_in_dialog_detail_product"
             app:layout_constraintStart_toStartOf="parent"/>
 
         <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_add_to_cart_in_dialog_detail_product"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginRight="22dp"
@@ -102,16 +107,6 @@
             app:layout_constraintEnd_toEndOf="parent"
             />
 
-        <ProgressBar
-            android:id="@+id/progress_in_detail_product"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="18dp"
-            android:visibility="gone"
-            app:layout_constraintTop_toBottomOf="@+id/txt_price_in_detail_product"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"/>
 
 
 
