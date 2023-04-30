@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.DialogFragment
 import com.example.testshoppingmarket.databinding.LayoutDialogDetailProductBinding
 import com.example.testshoppingmarket.ui.activites.MainActivity
+import com.example.testshoppingmarket.ui.activites.ShoppingCartActivity
 import com.example.testshoppingmarket.utils.ImageLoader
 
 
@@ -44,7 +45,7 @@ class DialogDetailProduct : DialogFragment() {
         binding.txtTitleDialogDetailProduct.text = title
         binding.txtPriceInDetailProduct.text = price
         binding.btnAddToCartInDialogDetailProduct.setOnClickListener {
-            val intent = Intent(this.requireContext(),MainActivity::class.java)
+            val intent = Intent(this.requireContext(),ShoppingCartActivity::class.java)
             intent.putExtra("name",binding.txtTitleDialogDetailProduct.text)
             intent.putExtra("image",binding.ivImageDetailProduct.toString())
             intent.putExtra("price",binding.txtPriceInDetailProduct.text)

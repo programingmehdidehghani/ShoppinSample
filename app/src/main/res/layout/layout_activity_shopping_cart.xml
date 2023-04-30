@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.activites.MainActivity">
+    tools:context=".ui.activites.ShoppingCartActivity">
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar_in_activity_main"
@@ -49,18 +49,6 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 />
 
-            <TextView
-                android:id="@+id/txt_smaple"
-                android:text="@string/txt_pass_login_activity"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textColor="@color/black"
-                android:visibility="gone"
-                android:layout_marginRight="8dp"
-                app:layout_constraintStart_toEndOf="@+id/txt_top_in_main_activity"
-                app:layout_constraintTop_toTopOf="@+id/iv_cart_in_main_activity"
-                app:layout_constraintBottom_toBottomOf="@+id/iv_cart_in_main_activity"/>
-
             <ImageView
                 android:id="@+id/iv_cart_in_main_activity"
                 android:layout_width="wrap_content"
@@ -71,12 +59,12 @@
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintBottom_toBottomOf="parent"/>
 
-                <androidx.constraintlayout.widget.Guideline
-                    android:id="@+id/gl_start_text_middle_in_main_activity"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    app:layout_constraintGuide_percent="0.45"/>
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/gl_start_text_middle_in_main_activity"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.45"/>
 
 
 
@@ -84,36 +72,5 @@
 
     </androidx.appcompat.widget.Toolbar>
 
-    <FrameLayout
-        android:id="@+id/flFragment"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        app:layout_constraintBottom_toTopOf="@+id/bottomNavigationView"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/toolbar_in_activity_main">
-
-        <fragment
-            android:id="@+id/shopNavHostFragment"
-            android:name="androidx.navigation.fragment.NavHostFragment"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            app:defaultNavHost="true"
-            app:navGraph="@navigation/shop_nav_graph"  />
-
-    </FrameLayout>
-
-
-
-    <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:id="@+id/bottomNavigationView"
-        android:layout_width="match_parent"
-        android:layout_height="68dp"
-        app:menu="@menu/bottom_navigation"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
