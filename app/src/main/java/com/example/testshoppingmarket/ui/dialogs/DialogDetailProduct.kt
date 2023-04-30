@@ -5,12 +5,16 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.activity.viewModels
 import androidx.fragment.app.DialogFragment
+import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.example.testshoppingmarket.databinding.LayoutDialogDetailProductBinding
 import com.example.testshoppingmarket.ui.viewModels.DetailProductViewModel
 import com.example.testshoppingmarket.ui.viewModels.HomeFragmentViewModel
+import com.example.testshoppingmarket.ui.viewModels.LoginViewModel
+import com.example.testshoppingmarket.utils.ImageLoader
 import com.example.testshoppingmarket.utils.Resource
 import com.example.testshoppingmarket.utils.toast
 
@@ -19,6 +23,7 @@ class DialogDetailProduct : DialogFragment() {
 
     private lateinit var binding: LayoutDialogDetailProductBinding
     private lateinit var detailViewModel: DetailProductViewModel
+    private val viewModelLogin: DetailProductViewModel by viewModels()
 
 
     override fun onCreateView(
@@ -32,26 +37,23 @@ class DialogDetailProduct : DialogFragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        detailViewModel =
-            ViewModelProvider(requireActivity()).get(DetailProductViewModel::class.java)
+      //  detailViewModel = ViewModelProvider(requireActivity()).get(DetailProductViewModel::class.java)
         val bundle = this.arguments
         val productId = bundle!!.getInt("productId")
         getResultDetailProduct(productId)
     }
 
     fun getResultDetailProduct(productId: Int) {
-        detailViewModel.getProductDetail(productId)
-        detailViewModel.detailProduct.observe(viewLifecycleOwner, Observer { response ->
+        viewModelLogin.getProductDetail(productId)
+        viewModelLogin.detailProduct.observe(viewLifecycleOwner, Observer { response ->
             when (response) {
                 is Resource.Success -> {
                     response.data?.let {
                         hideProgress()
-                        sortResult.clear()
-                        for (i in it) {
-                            sortResult.add(it)
-                        }
-                        productCategoryAdapter.updateList(sortResult)
-                        setUpProductCategoryRecyclerView()
+                        ImageLoader.loadImage(binding.ivImageDetailProduct,it.image)
+                        binding.txtDescriptionInDialogDetailProduct.text = it.description
+                        binding.txtTitleDialogDetailProduct.text = it.title
+                        binding.txtPriceInDetailProduct.text = it.price.toString()
                     }
                 }
 
@@ -71,11 +73,11 @@ class DialogDetailProduct : DialogFragment() {
     }
 
     fun showProgress() {
-        binding.pbCategoryInHomeFragment.visibility = View.VISIBLE
+        binding.progressInDetailProduct.visibility = View.VISIBLE
     }
 
     fun hideProgress() {
-        binding.pbCategoryInHomeFragment.visibility = View.GONE
+        binding.progressInDetailProduct.visibility = View.GONE
     }
 
 }
