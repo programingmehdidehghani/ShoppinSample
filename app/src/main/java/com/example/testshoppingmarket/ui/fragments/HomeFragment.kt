@@ -1,5 +1,6 @@
 package com.example.testshoppingmarket.ui.fragments
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
@@ -9,7 +10,9 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.testshoppingmarket.R
 import com.example.testshoppingmarket.adapters.CategoriesNameAdapter
 import com.example.testshoppingmarket.adapters.OnItemClickCallback
 import com.example.testshoppingmarket.adapters.OnItemClickCallbackProductCategory
@@ -17,6 +20,8 @@ import com.example.testshoppingmarket.adapters.ProductCategoryAdapter
 import com.example.testshoppingmarket.databinding.LayoutHomeFragmentBinding
 import com.example.testshoppingmarket.model.CategoriesHeader
 import com.example.testshoppingmarket.model.ProductsCategory
+import com.example.testshoppingmarket.ui.AddProfileActivity
+import com.example.testshoppingmarket.ui.MainActivity
 import com.example.testshoppingmarket.ui.dialog.DialogDetailProduct
 import com.example.testshoppingmarket.ui.viewModel.HomeFragmentViewModel
 import com.example.testshoppingmarket.utils.Resource
@@ -53,10 +58,8 @@ class HomeFragment : Fragment(), OnItemClickCallback , OnItemClickCallbackProduc
         super.onViewCreated(view, savedInstanceState)
         homeFragmentViewModel = ViewModelProvider(requireActivity()).get(HomeFragmentViewModel::class.java)
         binding.btnAddProductInHomeFragment.setOnClickListener {
-  /*          val fm: FragmentManager = getSupportFragmentManager()
-            val editNameDialogFragment: DialogDetailProduct =
-                DialogDetailProduct.newInstance("Some Title")
-            editNameDialogFragment.show(fm, "fragment_edit_name")*/
+            val intent = Intent(requireContext(), AddProfileActivity::class.java)
+            startActivity(intent)
         }
         getCategoriesName()
         setUpCategoriesNameRecyclerView()

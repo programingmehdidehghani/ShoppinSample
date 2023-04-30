@@ -19,5 +19,7 @@
     <string name="image_add_profile">image URL</string>
     <string name="price_add_profile">price</string>
     <string name="txt_cancel">Cancle</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 </resources>
