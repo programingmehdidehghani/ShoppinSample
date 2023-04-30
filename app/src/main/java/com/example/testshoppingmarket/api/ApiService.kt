@@ -3,7 +3,7 @@ package com.example.testshoppingmarket.api
 import com.example.testshoppingmarket.model.AddProductResponse
 import com.example.testshoppingmarket.model.AddProductRequest
 import com.example.testshoppingmarket.model.CategoriesHeader
-import com.example.testshoppingmarket.model.productDetail
+import com.example.testshoppingmarket.model.ProductDetail
 import com.example.testshoppingmarket.model.LoginRequest
 import com.example.testshoppingmarket.model.LoginResponse
 import com.example.testshoppingmarket.model.ProductsCategory
@@ -28,7 +28,7 @@ interface ApiService {
     suspend fun gerProductCategory(@Path("category") category: String): Response<ProductsCategory>
 
     @GET("products/{productId}")
-    suspend fun getDetailProduct(@Path("productId") productId: Int): Response<productDetail>
+    suspend fun getDetailProduct(@Path("productId") productId: String): Response<ProductDetail>
 
     @GET("products")
     suspend fun getSortingProduct(@Query("sort") sort: String): Response<ProductsCategory>

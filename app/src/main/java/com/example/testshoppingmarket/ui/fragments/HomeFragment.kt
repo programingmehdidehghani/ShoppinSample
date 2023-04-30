@@ -221,11 +221,11 @@ class HomeFragment : Fragment(), OnItemClickCallback , OnItemClickCallbackProduc
         }
     }
 
-    override fun onItemClickDetailProduct(id: String) {
+    override fun onItemClickDetailProduct(id: Int) {
         val fm: FragmentManager = requireActivity().supportFragmentManager
         val dialog = DialogDetailProduct()
         val bundle = Bundle()
-        bundle.putString("productId",id)
+        bundle.putInt("productId",id)
         dialog.arguments = bundle
         dialog.show(fm, "start")
     }

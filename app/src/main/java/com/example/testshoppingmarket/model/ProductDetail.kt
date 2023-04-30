@@ -1,6 +1,6 @@
 package com.example.testshoppingmarket.model
 
-data class productDetail(
+data class ProductDetail(
     val id: Int,
     val title: String,
     val price: Double,

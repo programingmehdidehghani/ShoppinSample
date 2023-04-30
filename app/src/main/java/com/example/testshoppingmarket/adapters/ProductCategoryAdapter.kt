@@ -15,7 +15,7 @@ import com.example.testshoppingmarket.ui.dialogs.DialogAddProduct
 import com.example.testshoppingmarket.utils.ImageLoader
 
 interface OnItemClickCallbackProductCategory {
-    fun onItemClickDetailProduct(id: String)
+    fun onItemClickDetailProduct(id: Int)
 }
 
 class ProductCategoryAdapter(private val onItemClickCallback: OnItemClickCallbackProductCategory) :
@@ -59,7 +59,7 @@ class ProductCategoryAdapter(private val onItemClickCallback: OnItemClickCallbac
 
             itemView.setOnClickListener {
                 onItemClickCallback.onItemClickDetailProduct(
-                    model.get(position).id.toString()
+                    model.get(position).id
                 )
             }
         }
