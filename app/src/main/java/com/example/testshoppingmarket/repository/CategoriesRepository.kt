@@ -2,6 +2,7 @@ package com.example.testshoppingmarket.repository
 
 import com.example.testshoppingmarket.api.ApiService
 import com.example.testshoppingmarket.model.CategoriesHeader
+import com.example.testshoppingmarket.model.ProductDetail
 import com.example.testshoppingmarket.model.ProductsCategory
 import retrofit2.Response
 import javax.inject.Inject
@@ -19,5 +20,9 @@ class CategoriesRepository @Inject constructor(
 
     suspend fun getSortingResult(sort: String): Response<ProductsCategory> {
         return apiService.getSortingProduct(sort)
+    }
+
+    suspend fun getDetailProduct(productId: Int): Response<ProductDetail>{
+        return apiService.getDetailProduct(productId)
     }
 }

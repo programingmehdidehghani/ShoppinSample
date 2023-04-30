@@ -21,6 +21,7 @@ import com.example.testshoppingmarket.model.ProductsCategory
 import com.example.testshoppingmarket.ui.activites.AddProfileActivity
 import com.example.testshoppingmarket.ui.dialogs.DialogDetailProduct
 import com.example.testshoppingmarket.ui.viewModels.HomeFragmentViewModel
+import com.example.testshoppingmarket.utils.ImageLoader
 import com.example.testshoppingmarket.utils.Resource
 import com.example.testshoppingmarket.utils.toast
 import dagger.hilt.android.AndroidEntryPoint
@@ -221,13 +222,42 @@ class HomeFragment : Fragment(), OnItemClickCallback , OnItemClickCallbackProduc
         }
     }
 
-    override fun onItemClickDetailProduct(id: Int) {
-        val fm: FragmentManager = requireActivity().supportFragmentManager
-        val dialog = DialogDetailProduct()
-        val bundle = Bundle()
-        bundle.putInt("productId",id)
-        dialog.arguments = bundle
-        dialog.show(fm, "start")
+    @OptIn(ExperimentalCoroutinesApi::class)
+    override fun onItemClickDetailProduct(productId: Int) {
+        homeFragmentViewModel.getProductDetail(productId)
+        homeFragmentViewModel.detailProduct.observe(viewLifecycleOwner, Observer { response ->
+            when (response) {
+                is Resource.Success -> {
+                    response.data?.let {
+                        hideProgress()
+                        val fm: FragmentManager = requireActivity().supportFragmentManager
+                        val dialog = DialogDetailProduct()
+                        val bundle = Bundle()
+                        bundle.putString("image",it.image)
+                        bundle.putString("title",it.title)
+                        bundle.putString("description",it.description)
+                        bundle.putString("price",it.price.toString())
+                        dialog.arguments = bundle
+                        dialog.show(fm, "start")
+                    }
+                }
+
+                is Resource.Error -> {
+                    response.errorMessage.let {
+                        toast(requireContext(), "error for categories name {${it}")
+                        Log.i("category", "error is  .." + it)
+                        hideProgress()
+                    }
+                }
+
+                is Resource.Loading -> {
+                    showProgress()
+                }
+            }
+        })
+
+
+
     }
 
 

@@ -15,7 +15,7 @@ import com.example.testshoppingmarket.ui.dialogs.DialogAddProduct
 import com.example.testshoppingmarket.utils.ImageLoader
 
 interface OnItemClickCallbackProductCategory {
-    fun onItemClickDetailProduct(id: Int)
+    fun onItemClickDetailProduct(productId: Int)
 }
 
 class ProductCategoryAdapter(private val onItemClickCallback: OnItemClickCallbackProductCategory) :
