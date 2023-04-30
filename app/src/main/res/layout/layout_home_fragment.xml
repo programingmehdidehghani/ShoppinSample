@@ -1,70 +1,103 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    android:layout_height="match_parent">
 
-   <androidx.recyclerview.widget.RecyclerView
-       android:id="@+id/rv_categories_name_in_home_fragment"
-       android:layout_width="match_parent"
-       android:layout_height="0dp"
-       android:layout_margin="12dp"
-       app:layout_constraintBottom_toTopOf="@+id/gl_bottom_tl_in_home_fragment"
-       app:layout_constraintTop_toTopOf="parent"
-       app:layout_constraintStart_toStartOf="parent"
-       app:layout_constraintEnd_toEndOf="parent"/>
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_categories_name_in_home_fragment"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_margin="12dp"
+        app:layout_constraintBottom_toTopOf="@+id/gl_bottom_tl_in_home_fragment"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <ProgressBar
         android:id="@+id/pb_category_in_home_fragment"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:visibility="gone"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"/>
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 
     <ImageView
         android:id="@+id/iv_shopp_in_home_fragment"
         android:layout_width="wrap_content"
         android:layout_height="200dp"
-        android:layout_marginTop="8dp"
         android:layout_marginStart="100dp"
+        android:layout_marginTop="8dp"
         android:layout_marginEnd="100dp"
         android:src="@drawable/rectangle"
-        app:layout_constraintTop_toBottomOf="@+id/rv_categories_name_in_home_fragment"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
+        app:layout_constraintTop_toBottomOf="@+id/rv_categories_name_in_home_fragment" />
 
     <ImageView
         android:id="@+id/iv_sorting_in_home_fragment"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@+id/iv_shopp_in_home_fragment"
-        app:layout_constraintStart_toStartOf="parent"/>
+        android:layout_marginStart="18dp"
+        android:src="@drawable/vector_sorting"
+        app:layout_constraintBottom_toTopOf="@+id/v_in_home_fragment"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/iv_shopp_in_home_fragment" />
 
+    <TextView
+        android:id="@+id/txt_sorting_in_home_fragment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="12dp"
+        android:text="@string/txt_sorting_home_fragment"
+        app:layout_constraintBottom_toBottomOf="@+id/iv_sorting_in_home_fragment"
+        app:layout_constraintStart_toEndOf="@+id/iv_sorting_in_home_fragment"
+        app:layout_constraintTop_toTopOf="@+id/iv_sorting_in_home_fragment" />
+
+    <TextView
+        android:id="@+id/txt_asending_in_home_fragment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="12dp"
+        android:text="@string/txt_sorting_asending"
+        app:layout_constraintBottom_toBottomOf="@+id/txt_sorting_in_home_fragment"
+        app:layout_constraintStart_toEndOf="@+id/txt_sorting_in_home_fragment"
+        app:layout_constraintTop_toTopOf="@+id/txt_sorting_in_home_fragment" />
+
+    <TextView
+        android:id="@+id/txt_desending_in_home_fragment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="12dp"
+        android:text="@string/txt_sorting_desending"
+        app:layout_constraintBottom_toBottomOf="@+id/txt_asending_in_home_fragment"
+        app:layout_constraintStart_toEndOf="@+id/txt_asending_in_home_fragment"
+        app:layout_constraintTop_toTopOf="@+id/txt_asending_in_home_fragment" />
 
     <View
         android:id="@+id/v_in_home_fragment"
         android:layout_width="match_parent"
         android:layout_height="1dp"
-        android:background="@color/black"
-        android:layout_marginEnd="18dp"
         android:layout_marginStart="18dp"
-        app:layout_constraintTop_toBottomOf="@+id/iv_shopp_in_home_fragment"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="18dp"
+        android:background="@color/black"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
+        app:layout_constraintTop_toBottomOf="@+id/iv_sorting_in_home_fragment" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_product_category_home_fragment"
-        android:layout_margin="12dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/v_in_home_fragment"
-        app:layout_constraintBottom_toTopOf="@+id/gl_under_rv_product_category"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content"
+        android:layout_margin="12dp"
+        app:layout_constraintBottom_toTopOf="@+id/gl_under_rv_product_category"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/v_in_home_fragment" />
 
     <com.google.android.material.button.MaterialButton
         android:layout_width="200dp"
@@ -72,8 +105,8 @@
         android:layout_margin="12dp"
         android:text="@string/txt_btn_add_product"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/rv_product_category_home_fragment"
-        app:layout_constraintEnd_toEndOf="parent"/>
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rv_product_category_home_fragment" />
 
 
     <androidx.constraintlayout.widget.Guideline
@@ -81,7 +114,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.8"/>
+        app:layout_constraintGuide_percent="0.8" />
 
 
     <androidx.constraintlayout.widget.Guideline
@@ -89,6 +122,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.08"/>
+        app:layout_constraintGuide_percent="0.08" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

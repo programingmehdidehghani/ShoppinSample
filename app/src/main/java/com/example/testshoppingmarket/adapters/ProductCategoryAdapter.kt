@@ -1,6 +1,8 @@
 package com.example.testshoppingmarket.adapters
 
 import android.annotation.SuppressLint
+import android.content.Context
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.core.os.persistableBundleOf
@@ -13,15 +15,17 @@ import com.example.testshoppingmarket.utils.ImageLoader
 interface OnItemClickCallbackProductCategory {
     fun onItemClick(id: String)
 }
-class ProductCategoryAdapter (private val onItemClickCallback: OnItemClickCallbackProductCategory) :
+
+class ProductCategoryAdapter(private val onItemClickCallback: OnItemClickCallbackProductCategory) :
     RecyclerView.Adapter<ProductCategoryAdapter.ProductCategoriesViewHolder>() {
 
     private val productsCategory: ArrayList<ProductsCategory> = arrayListOf()
-
+    private var context: Context? = null
 
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ProductCategoriesViewHolder {
-        val binding = ProductCategoryItemsBinding.inflate(LayoutInflater.from(parent.context),parent,false)
+        val binding =
+            ProductCategoryItemsBinding.inflate(LayoutInflater.from(parent.context), parent, false)
         return ProductCategoriesViewHolder(binding)
     }
 
@@ -36,21 +40,26 @@ class ProductCategoryAdapter (private val onItemClickCallback: OnItemClickCallba
     }
 
     override fun onBindViewHolder(holder: ProductCategoriesViewHolder, position: Int) {
-        holder.bind(productsCategory[position],onItemClickCallback)
+        holder.bind(productsCategory[position], onItemClickCallback)
     }
 
     @Suppress("DEPRECATION")
-    inner class ProductCategoriesViewHolder(private val binding: ProductCategoryItemsBinding) : RecyclerView.ViewHolder(binding.root){
+    inner class ProductCategoriesViewHolder(private val binding: ProductCategoryItemsBinding) :
+        RecyclerView.ViewHolder(binding.root) {
         fun bind(model: ProductsCategory, onItemClickCallback: OnItemClickCallbackProductCategory) {
             binding.txtDescriptionProductCategory.text = model.get(position).description
-            ImageLoader.loadImage(binding.ivPictureProductInProductCategory, model.get(position).image)
+            ImageLoader.loadImage(
+                binding.ivPictureProductInProductCategory,
+                model.get(position).image
+            )
             binding.txtTitleProductCtegory.text = model.get(position).title
             binding.txtPriceProductCategory.text = model.get(position).price.toString()
 
             itemView.setOnClickListener {
-                onItemClickCallback.onItemClick(
-                    model.get(position).id.toString()
-                )
+                model.get(position).id.toString()
+         /*       val intent = Intent(context, NewsContentActivity::class.java)
+                intent.putExtra("publishedAt", article.publishedAt)
+                context?.startActivity(intent)*/
             }
         }
     }
