@@ -11,6 +11,7 @@
     <string name="txt_sorting_home_fragment">sorting:</string>
     <string name="txt_sorting_desending">descending</string>
     <string name="txt_sorting_asending">Ascending</string>
+    <string name="title_detail_product">product details</string>
 
 
 </resources>

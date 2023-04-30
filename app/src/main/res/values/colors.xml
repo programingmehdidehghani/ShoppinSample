@@ -7,5 +7,6 @@
     <color name="toolbar_color">#0021CE</color>
     <color name="lower_white">#ECEAEF</color>
     <color name="btn_product_category">#F74528</color>
+    <color name="low_gray">#E4E4E4</color>
 
 </resources>
