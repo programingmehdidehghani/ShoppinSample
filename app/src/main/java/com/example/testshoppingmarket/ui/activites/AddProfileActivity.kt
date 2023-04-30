@@ -1,16 +1,14 @@
 package com.example.testshoppingmarket.ui.activites
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import android.view.View
 import androidx.activity.viewModels
-import androidx.lifecycle.Observer
+import androidx.appcompat.app.AppCompatActivity
+import androidx.fragment.app.FragmentManager
 import com.example.testshoppingmarket.databinding.LayoutActivityAddProfileBinding
-import com.example.testshoppingmarket.model.AddProductRequest
+import com.example.testshoppingmarket.ui.dialogs.DialogAddProduct
 import com.example.testshoppingmarket.ui.viewModels.AddProductViewModel
-import com.example.testshoppingmarket.utils.Resource
-import com.example.testshoppingmarket.utils.toast
+import com.google.android.material.internal.ContextUtils.getActivity
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -30,7 +28,10 @@ class AddProfileActivity : AppCompatActivity() {
 
     fun sendAddProduct(){
         viewBinding.btnAddProductInAddProfile.setOnClickListener {
-            val addProduct = AddProductRequest(
+            val fm: FragmentManager = this.supportFragmentManager
+            val dialog = DialogAddProduct()
+            dialog.show(fm,"start")
+         /*   val addProduct = AddProductRequest(
                 viewBinding.etTitleInAddProfile.text.toString(),
                 viewBinding.etPriceInAddProfile.text.toString(),
                 viewBinding.etDescriptionInAddProfile.text.toString(),
@@ -57,7 +58,7 @@ class AddProfileActivity : AppCompatActivity() {
                         showProgress()
                     }
                 }
-            })
+            })*/
         }
     }
 

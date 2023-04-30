@@ -1,22 +1,22 @@
-package com.example.testshoppingmarket.ui.dialog
+package com.example.testshoppingmarket.ui.dialogs
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.DialogFragment
-import com.example.testshoppingmarket.databinding.LayoutDialogDetailProducrBinding
+import com.example.testshoppingmarket.databinding.LayoutDialogAddProductBinding
 
-class DialogDetailProduct: DialogFragment() {
+class DialogAddProduct: DialogFragment() {
 
-    private lateinit var binding: LayoutDialogDetailProducrBinding
+    private lateinit var binding: LayoutDialogAddProductBinding
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        binding = LayoutDialogDetailProducrBinding.inflate(inflater, container, false)
+        binding = LayoutDialogAddProductBinding.inflate(inflater, container, false)
         return binding.root
     }
 
