@@ -10,5 +10,7 @@
     <color name="low_gray">#E4E4E4</color>
     <color name="very_lower_white">#F9F9F9</color>
     <color name="color_btn">#FD6644</color>
+    <color name="low_gray2">#C8C8C8</color>
+    <color name="gray_txt_add_product">#737373</color>
 
 </resources>
