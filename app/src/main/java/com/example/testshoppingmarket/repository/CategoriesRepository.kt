@@ -16,4 +16,8 @@ class CategoriesRepository @Inject constructor(
     suspend fun getProductCategory(category: String): Response<ProductsCategory> {
         return apiService.gerProductCategory(category)
     }
+
+    suspend fun getSortingResult(sort: String): Response<ProductsCategory> {
+        return apiService.getSortingProduct(sort)
+    }
 }

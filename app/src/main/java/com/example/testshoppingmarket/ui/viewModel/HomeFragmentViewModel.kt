@@ -33,12 +33,19 @@ class HomeFragmentViewModel @Inject constructor(
     private val _getProductCategory = MutableLiveData<Resource<ProductsCategory>>()
     val getProductCategory : LiveData<Resource<ProductsCategory>> = _getProductCategory
 
+    private val _getResultSort = MutableLiveData<Resource<ProductsCategory>>()
+    val getResultSortLive : LiveData<Resource<ProductsCategory>> = _getResultSort
+
     fun getCategoriesName() = viewModelScope.launch {
         getCategories()
     }
 
     fun getProductCategoryShow(category: String) = viewModelScope.launch {
         getProductCategory(category)
+    }
+
+    fun getResultSort(sort: String) = viewModelScope.launch {
+        getResultSortRequest(sort)
     }
 
     private suspend fun getCategories(){
@@ -105,6 +112,41 @@ class HomeFragmentViewModel @Inject constructor(
                 is IOException -> {
                     toast(getApplication(), "Exception ${t.message}")
                     _getProductCategory.postValue(Resource.Error(t.message!!))
+                    Log.i("category","error is  .."+t.message)
+                }
+            }
+        }
+    }
+
+    private suspend fun getResultSortRequest(sort: String){
+        _getResultSort.postValue(Resource.Loading)
+        try {
+            if (hasInternetConnection<App>()) {
+                val response = repository.getSortingResult(sort)
+                if (response.isSuccessful) {
+                    if (response.body() != null) {
+                        _getResultSort.postValue(Resource.Success(response.body()!!))
+                    }
+                } else {
+                    _getResultSort.postValue(Resource.Error(response.message()))
+                    Log.i("category","error is  .."+response.message())
+                    Resource.Error(response.message())
+                }
+            } else {
+                _getResultSort.postValue(Resource.Error("No Internet Connection.!"))
+                Log.i("category","error is  ..")
+                toast(getApplication(), "No Internet Connection.!")
+
+            }
+        } catch (e: HttpException) {
+            toast(getApplication(), "Exception ${e.message}")
+            _getResultSort.postValue(Resource.Error(e.message()))
+            Log.i("category","error is  .."+e.message())
+        } catch (t: Throwable) {
+            when (t) {
+                is IOException -> {
+                    toast(getApplication(), "Exception ${t.message}")
+                    _getResultSort.postValue(Resource.Error(t.message!!))
                     Log.i("category","error is  .."+t.message)
                 }
             }

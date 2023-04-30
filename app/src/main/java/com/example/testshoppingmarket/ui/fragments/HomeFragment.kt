@@ -34,6 +34,7 @@ class HomeFragment : Fragment(), OnItemClickCallback , OnItemClickCallbackProduc
     private lateinit var binding: LayoutHomeFragmentBinding
     private var categoriesName: ArrayList<CategoriesHeader> = arrayListOf()
     private var productCategory: ArrayList<ProductsCategory> = arrayListOf()
+    private var sortResult: ArrayList<ProductsCategory> = arrayListOf()
 
        override fun onCreateView(
            inflater: LayoutInflater,
@@ -51,6 +52,8 @@ class HomeFragment : Fragment(), OnItemClickCallback , OnItemClickCallbackProduc
         homeFragmentViewModel = ViewModelProvider(requireActivity()).get(HomeFragmentViewModel::class.java)
         getCategoriesName()
         setUpCategoriesNameRecyclerView()
+        resultSortingAsecending()
+        resultSortingDescending()
     }
 
     @OptIn(ExperimentalCoroutinesApi::class)
@@ -144,6 +147,70 @@ class HomeFragment : Fragment(), OnItemClickCallback , OnItemClickCallbackProduc
                 }
             }
         })
+    }
+
+    @OptIn(ExperimentalCoroutinesApi::class)
+    private fun resultSortingAsecending(){
+        binding.txtAsendingInHomeFragment.setOnClickListener {
+            homeFragmentViewModel.getResultSort("asec")
+            homeFragmentViewModel.getResultSortLive.observe(viewLifecycleOwner, Observer { response ->
+                when(response){
+                    is Resource.Success ->{
+                        response.data?.let{
+                            hideProgress()
+                            sortResult.clear()
+                            for (i in it){
+                                sortResult.add(it)
+                            }
+                            productCategoryAdapter.updateList(sortResult)
+                            setUpProductCategoryRecyclerView()
+                        }
+                    }
+                    is Resource.Error -> {
+                        response.errorMessage.let {
+                            toast(requireContext(),"error for categories name {${it}")
+                            Log.i("category","error is  .."+it)
+                            hideProgress()
+                        }
+                    }
+                    is Resource.Loading -> {
+                        showProgress()
+                    }
+                }
+            })
+        }
+    }
+
+    @OptIn(ExperimentalCoroutinesApi::class)
+    private fun resultSortingDescending(){
+        binding.txtDesendingInHomeFragment.setOnClickListener {
+            homeFragmentViewModel.getResultSort("desc")
+            homeFragmentViewModel.getResultSortLive.observe(viewLifecycleOwner, Observer { response ->
+                when(response){
+                    is Resource.Success ->{
+                        response.data?.let{
+                            hideProgress()
+                            sortResult.clear()
+                            for (i in it){
+                                sortResult.add(it)
+                            }
+                            productCategoryAdapter.updateList(sortResult)
+                            setUpProductCategoryRecyclerView()
+                        }
+                    }
+                    is Resource.Error -> {
+                        response.errorMessage.let {
+                            toast(requireContext(),"error for categories name {${it}")
+                            Log.i("category","error is  .."+it)
+                            hideProgress()
+                        }
+                    }
+                    is Resource.Loading -> {
+                        showProgress()
+                    }
+                }
+            })
+        }
     }
 
 

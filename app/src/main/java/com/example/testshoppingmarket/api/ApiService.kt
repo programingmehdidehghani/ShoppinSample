@@ -10,6 +10,7 @@ import retrofit2.http.Body
 import retrofit2.http.GET
 import retrofit2.http.POST
 import retrofit2.http.Path
+import retrofit2.http.Query
 
 interface ApiService {
 
@@ -26,5 +27,8 @@ interface ApiService {
 
     @GET("products/{productId}")
     suspend fun getDetailProduct(@Path("productId") productId: Int): Response<productDetail>
+
+    @GET("products?")
+    suspend fun getSortingProduct(@Query("sort") sort: String): Response<ProductsCategory>
 
 }
