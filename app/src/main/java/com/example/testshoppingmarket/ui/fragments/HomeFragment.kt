@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentManager
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -18,6 +19,7 @@ import com.example.testshoppingmarket.databinding.LayoutHomeFragmentBinding
 import com.example.testshoppingmarket.model.CategoriesHeader
 import com.example.testshoppingmarket.model.ProductsCategory
 import com.example.testshoppingmarket.ui.activites.AddProfileActivity
+import com.example.testshoppingmarket.ui.dialogs.DialogDetailProduct
 import com.example.testshoppingmarket.ui.viewModels.HomeFragmentViewModel
 import com.example.testshoppingmarket.utils.Resource
 import com.example.testshoppingmarket.utils.toast
@@ -217,6 +219,12 @@ class HomeFragment : Fragment(), OnItemClickCallback , OnItemClickCallbackProduc
                 }
             })
         }
+    }
+
+    override fun onItemClickDetailProduct(id: String) {
+         val fm: FragmentManager = requireActivity().supportFragmentManager
+         val dialog = DialogDetailProduct()
+         dialog.show(fm,"start")
     }
 
 

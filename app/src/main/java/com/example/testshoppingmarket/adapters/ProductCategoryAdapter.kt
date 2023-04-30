@@ -6,14 +6,16 @@ import android.content.Intent
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.core.os.persistableBundleOf
+import androidx.fragment.app.FragmentManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.testshoppingmarket.databinding.ProductCategoryItemsBinding
 import com.example.testshoppingmarket.model.CategoriesHeader
 import com.example.testshoppingmarket.model.ProductsCategory
+import com.example.testshoppingmarket.ui.dialogs.DialogAddProduct
 import com.example.testshoppingmarket.utils.ImageLoader
 
 interface OnItemClickCallbackProductCategory {
-    fun onItemClick(id: String)
+    fun onItemClickDetailProduct(id: String)
 }
 
 class ProductCategoryAdapter(private val onItemClickCallback: OnItemClickCallbackProductCategory) :
@@ -56,10 +58,9 @@ class ProductCategoryAdapter(private val onItemClickCallback: OnItemClickCallbac
             binding.txtPriceProductCategory.text = model.get(position).price.toString()
 
             itemView.setOnClickListener {
-                model.get(position).id.toString()
-         /*       val intent = Intent(context, NewsContentActivity::class.java)
-                intent.putExtra("publishedAt", article.publishedAt)
-                context?.startActivity(intent)*/
+                onItemClickCallback.onItemClickDetailProduct(
+                    model.get(position).id.toString()
+                )
             }
         }
     }
