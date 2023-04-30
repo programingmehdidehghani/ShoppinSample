@@ -25,6 +25,7 @@
     <string name="txt_category">category:</string>
     <string name="txt_price">price:</string>
     <string name="txt_add_to_buy">Add to cart</string>
+    <string name="txt_title_shoppin_cart">Shopping Cart</string>
 
 
 </resources>
