@@ -8,5 +8,7 @@
     <color name="lower_white">#ECEAEF</color>
     <color name="btn_product_category">#F74528</color>
     <color name="low_gray">#E4E4E4</color>
+    <color name="very_lower_white">#F9F9F9</color>
+    <color name="color_btn">#FD6644</color>
 
 </resources>

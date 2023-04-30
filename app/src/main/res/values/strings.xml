@@ -12,6 +12,12 @@
     <string name="txt_sorting_desending">descending</string>
     <string name="txt_sorting_asending">Ascending</string>
     <string name="title_detail_product">product details</string>
-
+    <string name="txt_title_add_profile">A Lorem Ipsum text generator is specifically designed to generate a dummy text or placeholder text.</string>
+    <string name="title_add_profile">Title</string>
+    <string name="description_add_profile">Description</string>
+    <string name="category_add_profile">category</string>
+    <string name="image_add_profile">image URL</string>
+    <string name="price_add_profile">price</string>
+    <string name="txt_cancel">Cancle</string>
 
 </resources>
