@@ -1,5 +1,7 @@
 package com.example.testshoppingmarket.api
 
+import com.example.testshoppingmarket.model.AddProduct
+import com.example.testshoppingmarket.model.AddProductRequest
 import com.example.testshoppingmarket.model.CategoriesHeader
 import com.example.testshoppingmarket.model.productDetail
 import com.example.testshoppingmarket.model.LoginRequest
@@ -30,5 +32,7 @@ interface ApiService {
 
     @GET("products")
     suspend fun getSortingProduct(@Query("sort") sort: String): Response<ProductsCategory>
+
+    suspend fun addProduct(@Body addProfile: AddProductRequest): Response<AddProduct>
 
 }

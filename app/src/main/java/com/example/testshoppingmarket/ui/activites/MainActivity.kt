@@ -1,4 +1,4 @@
-package com.example.testshoppingmarket.ui
+package com.example.testshoppingmarket.ui.activites
 
 import android.R.menu
 import android.os.Bundle

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.LoginActivity">
+    tools:context=".ui.activites.LoginActivity">
 
     <ImageView
         android:id="@+id/txt_eco_shop_in_login_activity"
