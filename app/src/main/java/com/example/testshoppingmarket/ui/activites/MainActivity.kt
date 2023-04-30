@@ -25,7 +25,11 @@ class MainActivity : AppCompatActivity() {
         val navHostFragment = supportFragmentManager.findFragmentById(R.id.shopNavHostFragment) as NavHostFragment
         val navController = navHostFragment.navController
         viewBinding.bottomNavigationView.setupWithNavController(navController)
+    }
 
+    override fun onResume() {
+        super.onResume()
+        toast(this,"call activity")
     }
 
 }

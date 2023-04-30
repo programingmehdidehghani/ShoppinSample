@@ -41,7 +41,9 @@ class DialogDetailProduct : DialogFragment() {
         binding.txtDescriptionInDialogDetailProduct.text = description
         binding.txtTitleDialogDetailProduct.text = title
         binding.txtPriceInDetailProduct.text = price
-        binding.
+        binding.btnAddToCartInDialogDetailProduct.setOnClickListener {
+            this.dismiss()
+        }
     }
 
     override fun onDetach() {
