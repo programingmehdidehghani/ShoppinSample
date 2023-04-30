@@ -11,6 +11,7 @@ class Constants {
 
     companion object {
         const val BASE_URL = "https://fakestoreapi.com/"
+        const val DATABASE_NAME = "cart_db"
     }
 
 }

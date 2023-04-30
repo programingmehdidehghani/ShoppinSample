@@ -1,9 +1,12 @@
 package com.example.testshoppingmarket.di
 
 import android.content.Context
+import androidx.room.Room
 import com.example.testshoppingmarket.App
 import com.example.testshoppingmarket.api.ApiService
+import com.example.testshoppingmarket.db.CartDB
 import com.example.testshoppingmarket.utils.Constants.Companion.BASE_URL
+import com.example.testshoppingmarket.utils.Constants.Companion.DATABASE_NAME
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -28,5 +31,15 @@ object AppModule {
             .build()
             .create()
     }
+
+    @Singleton
+    @Provides
+    fun provideRunningDatabase(
+        @ApplicationContext app: Context
+    ) = Room.databaseBuilder(
+        app,
+        CartDB::class.java,
+        DATABASE_NAME
+    ).build()
 
 }

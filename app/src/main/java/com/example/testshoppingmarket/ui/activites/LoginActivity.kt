@@ -36,6 +36,7 @@ class LoginActivity : AppCompatActivity() {
                             response.data?.let {
                                 toast(this,it.token)*/
                                 val intent = Intent(this, MainActivity::class.java)
+                                intent.putExtra("isFirstRun",true)
                                 startActivity(intent)
             /*                }
                         }
