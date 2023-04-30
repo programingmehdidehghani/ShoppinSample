@@ -24,6 +24,7 @@
     <string name="title_dialog_add_product">Your product has been successfully registered</string>
     <string name="txt_category">category:</string>
     <string name="txt_price">price:</string>
+    <string name="txt_add_to_buy">Add to cart</string>
 
 
 </resources>
