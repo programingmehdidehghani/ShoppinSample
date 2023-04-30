@@ -7,7 +7,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
 import com.example.testshoppingmarket.App
-import com.example.testshoppingmarket.model.AddProduct
+import com.example.testshoppingmarket.model.AddProductResponse
 import com.example.testshoppingmarket.model.AddProductRequest
 import com.example.testshoppingmarket.repository.AddProductRepository
 import com.example.testshoppingmarket.utils.Resource
@@ -25,8 +25,8 @@ class AddProductViewModel @Inject constructor(
     private val repository: AddProductRepository
 ) : AndroidViewModel(application) {
 
-    private val _addProduct = MutableLiveData<Resource<AddProduct>>()
-    val addProduct: LiveData<Resource<AddProduct>> = _addProduct
+    private val _addProduct = MutableLiveData<Resource<AddProductResponse>>()
+    val addProduct: LiveData<Resource<AddProductResponse>> = _addProduct
 
     fun addProduct(addProduct: AddProductRequest) = viewModelScope.launch {
         addProfileResult(addProduct)

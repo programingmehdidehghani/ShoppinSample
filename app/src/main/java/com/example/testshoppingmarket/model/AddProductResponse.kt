@@ -1,6 +1,6 @@
 package com.example.testshoppingmarket.model
 
-class AddProduct : ArrayList<AddProduct.AddProfileItem>(){
+class AddProductResponse : ArrayList<AddProductResponse.AddProfileItem>(){
     data class AddProfileItem(
         val id: Int,
         val title: String,

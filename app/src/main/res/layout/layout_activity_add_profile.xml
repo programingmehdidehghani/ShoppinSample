@@ -153,6 +153,15 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/gl_center_btn_in_add_profile"/>
 
+            <ProgressBar
+                android:id="@+id/pr_in_add_product_activity"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"/>
+
             <androidx.constraintlayout.widget.Guideline
                 android:id="@+id/gl_center_btn_in_add_profile"
                 android:layout_width="wrap_content"
@@ -163,6 +172,8 @@
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </androidx.cardview.widget.CardView>
+
+
 
 
     <androidx.constraintlayout.widget.Guideline
