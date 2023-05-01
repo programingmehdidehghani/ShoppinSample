@@ -5,7 +5,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.DialogFragment
-import com.example.testshoppingmarket.databinding.LayoutDialogDetailProductBinding
 import com.example.testshoppingmarket.databinding.LayoutResultPaymentDialogBinding
 
 class ResultPaymentDialog : DialogFragment() {
@@ -29,7 +28,19 @@ class ResultPaymentDialog : DialogFragment() {
         params.width = 700
         params.height = 1000
         val bundle = this.arguments
-        var total = bundle!!.getString("total")
+        val total = bundle!!.getString("total")
+        val cardNumber = bundle!!.getString("cardNumber")
         binding.txtPriceAmountInPaymentDialog.text = total
+        binding.txtContentCardNumberInPaymentDialog.text = cardNumber
+    }
+
+    override fun onStop() {
+        super.onStop()
+        this.dismiss()
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        this.dismiss()
     }
 }

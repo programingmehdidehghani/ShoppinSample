@@ -9,7 +9,7 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="match_parent">
 
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/toolbar_title_in_detail_product"
@@ -95,7 +95,7 @@
             android:id="@+id/btn_add_to_cart_in_dialog_detail_product"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginRight="22dp"
+            android:layout_marginRight="18dp"
             android:text="@string/txt_add_to_buy"
             android:textSize="14sp"
             android:drawableLeft="@drawable/baseline_shopping_basket_24"
