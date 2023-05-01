@@ -2,8 +2,11 @@ package com.example.testshoppingmarket.ui.activites
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.fragment.app.FragmentManager
 import com.example.testshoppingmarket.R
 import com.example.testshoppingmarket.databinding.LayoutActivityPaymentBinding
+import com.example.testshoppingmarket.ui.dialogs.DetailProductDialog
+import com.example.testshoppingmarket.ui.dialogs.ResultPaymentDialog
 
 class PaymentActivity : AppCompatActivity() {
 
@@ -16,7 +19,12 @@ class PaymentActivity : AppCompatActivity() {
         val allTotal = intent.getStringExtra("total")
         viewBinding.txtTotalAmountInPaymentActivity.text = getString(R.string.txt_all_total_in_payment).format(allTotal)
         viewBinding.btnCheckOutInPaymentActivity.setOnClickListener {
-
+            val fm: FragmentManager = this.supportFragmentManager
+            val dialog = ResultPaymentDialog()
+            val bundle = Bundle()
+            bundle.putString("total",allTotal)
+            dialog.arguments = bundle
+            dialog.show(fm, "start")
         }
     }
 }

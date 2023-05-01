@@ -7,7 +7,7 @@ import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.FragmentManager
 import androidx.lifecycle.Observer
-import com.example.testshoppingmarket.databinding.LayoutActivityAddProfileBinding
+import com.example.testshoppingmarket.databinding.LayoutActivityAddProductBinding
 import com.example.testshoppingmarket.model.AddProductRequest
 import com.example.testshoppingmarket.ui.dialogs.AddProductDialog
 import com.example.testshoppingmarket.ui.viewModels.AddProductViewModel
@@ -22,7 +22,7 @@ class AddProductActivity : AppCompatActivity() {
 
 
     private val viewBinding by lazy {
-        LayoutActivityAddProfileBinding.inflate(layoutInflater)
+        LayoutActivityAddProductBinding.inflate(layoutInflater)
     }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
