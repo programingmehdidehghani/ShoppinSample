@@ -3,6 +3,8 @@
 + MVVM - Clean Code
 + Coroutines
 + Retrofit
++ DI = Hilt
+
 
 # some pictures
 
