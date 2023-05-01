@@ -82,7 +82,6 @@
         android:textSize="16sp"
         android:gravity="center"
         android:background="@drawable/rectangle_37"
-        android:text="@string/txt_all_total_in_payment"
         app:layout_constraintTop_toBottomOf="@+id/toolbar_in_activity_payment"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>
@@ -143,22 +142,96 @@
             />
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/et_ccv2_in_payment_activity"
-                android:layout_width="match_parent"
+                android:id="@+id/et_year_in_payment_activity"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:digits="0123456789-"
                 android:maxLength="5"
                 android:inputType="number"
-                android:layout_marginEnd="18dp"
                 android:layout_marginStart="18dp"
+                android:layout_marginTop="18dp"
+                android:layout_marginEnd="4dp"
+                android:background="@drawable/background_et_login_activity"
+                android:padding="8dp"
+                app:layout_constraintTop_toBottomOf="@+id/et_ccv2_in_payment_activity"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/gl_middle_page_in_payment_activity"
+                android:hint="@string/txt_year_in_payment"
+                />
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/et_month_in_payment_activity"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:digits="0123456789-"
+                android:maxLength="10"
+                android:inputType="number"
+                android:layout_marginStart="4dp"
+                android:layout_marginEnd="18dp"
                 android:layout_marginTop="18dp"
                 android:background="@drawable/background_et_login_activity"
                 android:padding="8dp"
-                app:layout_constraintTop_toBottomOf="@+id/et_number_card_in_payment_activity"
-                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/et_ccv2_in_payment_activity"
                 app:layout_constraintEnd_toEndOf="parent"
-                android:hint="CCV2"
+                app:layout_constraintStart_toEndOf="@+id/gl_middle_page_in_payment_activity"
+                android:hint="@string/txt_month_in_payment"
                 />
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/et_epass_in_payment_activity"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:digits="0123456789-"
+                android:maxLength="20"
+                android:inputType="number"
+                android:layout_marginStart="18dp"
+                android:layout_marginEnd="18dp"
+                android:layout_marginTop="18dp"
+                android:background="@drawable/background_et_login_activity"
+                android:padding="8dp"
+                app:layout_constraintTop_toBottomOf="@+id/et_year_in_payment_activity"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                android:hint="@string/txt_e_pass_in_payment"
+                />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_check_out_in_shopping_cart"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/color_btn"
+                android:text="@string/txt_btn_check_out_in_payment"
+                android:layout_marginBottom="18dp"
+                android:layout_marginEnd="18dp"
+                android:layout_marginStart="18dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/et_epass_in_payment_activity"
+                app:layout_constraintStart_toEndOf="@+id/gl_middle_page_in_payment_activity"
+                app:layout_constraintEnd_toEndOf="parent"/>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_cancel_in_shopping_cart"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/txt_cancel"
+                android:layout_marginBottom="18dp"
+                android:layout_marginEnd="18dp"
+                android:layout_marginStart="18dp"
+                app:backgroundTint="@color/white"
+                app:strokeColor="@color/color_btn"
+                app:strokeWidth="2dp"
+                android:textColor="@color/color_btn"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/et_epass_in_payment_activity"
+                app:layout_constraintEnd_toStartOf="@+id/gl_middle_page_in_payment_activity"
+                app:layout_constraintStart_toStartOf="parent"/>
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/gl_middle_page_in_payment_activity"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.5"/>
 
 
 

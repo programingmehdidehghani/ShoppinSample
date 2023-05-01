@@ -43,6 +43,7 @@ class ShoppingCartActivity : AppCompatActivity() {
         viewBinding.txtTitleProductInShoppingCart.text = name
         viewBinding.txtPriceDbProductInShoppingCart.text = price
         viewBinding.txtTotalCheckProductInShoppingCart.text = price
+        viewBinding.txtResultTotalAmountInShoppingCart.text = price
         ImageLoader.loadImage(viewBinding.ivImageProductInShappingCart, image.toString())
         viewBinding.btnCheckOutInShoppingCart.setOnClickListener {
             val intent = Intent(this, PaymentActivity::class.java)

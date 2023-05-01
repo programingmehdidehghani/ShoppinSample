@@ -33,5 +33,10 @@
     <string name="txt_total_amount">Total Amount:</string>
     <string name="btn_txt_check_out_cart">Proceed to Check Out</string>
     <string name="txt_all_total_in_payment">Total Amount: %1$s</string>
+    <string name="txt_year_in_payment">Year</string>
+    <string name="txt_month_in_payment">Month</string>
+    <string name="txt_e_pass_in_payment">E-Pass</string>
+    <string name="txt_btn_check_out_in_payment">Check Out</string>
+
 
 </resources>
