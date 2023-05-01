@@ -41,5 +41,12 @@
     <string name="txt_card_number_result_payment">card number:</string>
     <string name="txt_tracking_code_result_payment">Tracking Code:</string>
     <string name="btn_txt_in_payment_result">Complete  transaction</string>
+    <string name="txt_off_three_month_in_shopping_cart">3 months</string>
+    <string name="txt_off_six_month_in_shopping_cart">6 months</string>
+    <string name="txt_off_tewelev_month_in_shopping_cart">12 months</string>
+    <string name="txt_off_percent_20_month_in_shopping_cart">20% intersts</string>
+    <string name="txt_off_percent_10_month_in_shopping_cart">10% intersts</string>
+    <string name="txt_off_tewelev_05_in_shopping_cart">05% intersts</string>
+
 
 </resources>

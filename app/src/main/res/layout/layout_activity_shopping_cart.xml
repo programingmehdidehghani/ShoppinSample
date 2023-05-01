@@ -300,7 +300,7 @@
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="wrap_content">
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/btn_cash_in_shopping_cart"
@@ -308,6 +308,8 @@
                 android:layout_height="wrap_content"
                 android:text="@string/txt_cash"
                 android:textSize="16sp"
+                android:textColor="@color/black"
+                android:backgroundTint="@color/very_low_gray"
                 app:layout_constraintEnd_toStartOf="@+id/gl_middle_btn_in_shopping_cart"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintStart_toStartOf="parent"/>
@@ -318,8 +320,7 @@
                 android:layout_height="wrap_content"
                 android:text="@string/txt_loan_in_shopping_cart"
                 android:textSize="16sp"
-                android:textColor="@color/black"
-                android:backgroundTint="@color/very_low_gray"
+                android:backgroundTint="@color/toolbar_color"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/gl_middle_btn_in_shopping_cart"
                 app:layout_constraintEnd_toEndOf="parent" />
@@ -331,6 +332,7 @@
                 android:layout_marginStart="22dp"
                 android:layout_marginTop="22dp"
                 android:textStyle="bold"
+                android:visibility="visible"
                 android:padding="5dp"
                 android:text="@string/txt_total_amount"
                 app:layout_constraintTop_toBottomOf="@+id/btn_cash_in_shopping_cart"
@@ -343,10 +345,119 @@
                 android:layout_marginStart="22dp"
                 android:layout_marginTop="18dp"
                 android:padding="5dp"
+                android:visibility="visible"
                 android:textStyle="bold"
                 android:layout_marginEnd="18dp"
                 app:layout_constraintTop_toTopOf="@+id/txt_title_total_amount_in_shopping_cart"
                 app:layout_constraintBottom_toBottomOf="@+id/txt_title_total_amount_in_shopping_cart"
+                app:layout_constraintEnd_toEndOf="parent"/>
+
+            <RadioButton
+                android:id="@+id/rb_three_month_in_activity_shopping"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="30dp"
+                android:visibility="gone"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/btn_cash_in_shopping_cart"
+                />
+
+            <TextView
+                android:id="@+id/txt_title_three_month_in_shopping_cart"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:visibility="gone"
+                android:text="@string/txt_off_three_month_in_shopping_cart"
+                app:layout_constraintTop_toTopOf="@+id/rb_three_month_in_activity_shopping"
+                app:layout_constraintBottom_toBottomOf="@+id/rb_three_month_in_activity_shopping"
+                app:layout_constraintStart_toEndOf="@+id/rb_three_month_in_activity_shopping"
+                tools:layout_editor_absoluteY="48dp" />
+
+            <TextView
+                android:id="@+id/txt_interest_20_in_shopping_cart"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                app:layout_constraintTop_toTopOf="@+id/txt_title_three_month_in_shopping_cart"
+                app:layout_constraintStart_toEndOf="@+id/gl_middle_btn_in_shopping_cart"
+                android:text="@string/txt_off_percent_20_month_in_shopping_cart"
+                app:layout_constraintEnd_toEndOf="parent"/>
+
+            <RadioButton
+                android:id="@+id/rb_six_month_in_activity_shopping"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="30dp"
+                android:visibility="gone"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/rb_three_month_in_activity_shopping"
+                />
+
+            <TextView
+                android:id="@+id/txt_title_six_month_in_shopping_cart"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:visibility="gone"
+                android:text="@string/txt_off_six_month_in_shopping_cart"
+                app:layout_constraintTop_toTopOf="@+id/rb_six_month_in_activity_shopping"
+                app:layout_constraintBottom_toBottomOf="@+id/rb_six_month_in_activity_shopping"
+                app:layout_constraintStart_toEndOf="@+id/rb_three_month_in_activity_shopping"
+                tools:layout_editor_absoluteY="48dp" />
+
+            <TextView
+                android:id="@+id/txt_interest_10_in_shopping_cart"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                app:layout_constraintTop_toTopOf="@+id/txt_title_six_month_in_shopping_cart"
+                app:layout_constraintStart_toEndOf="@+id/gl_middle_btn_in_shopping_cart"
+                android:text="@string/txt_off_percent_10_month_in_shopping_cart"
+                app:layout_constraintEnd_toEndOf="parent"/>
+
+            <RadioButton
+                android:id="@+id/rb_12_month_in_activity_shopping"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="30dp"
+                android:visibility="gone"
+                app:layout_constraintBottom_toTopOf="@+id/btn_check_out_in_shopping_cart"
+                android:layout_marginStart="30dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/rb_six_month_in_activity_shopping"
+                />
+
+            <TextView
+                android:id="@+id/txt_title_12_month_in_shopping_cart"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:visibility="gone"
+                android:text="@string/txt_off_tewelev_month_in_shopping_cart"
+                app:layout_constraintTop_toTopOf="@+id/rb_12_month_in_activity_shopping"
+                app:layout_constraintBottom_toBottomOf="@+id/rb_12_month_in_activity_shopping"
+                app:layout_constraintStart_toEndOf="@+id/rb_three_month_in_activity_shopping"
+                tools:layout_editor_absoluteY="48dp" />
+
+            <TextView
+                android:id="@+id/txt_interest_05_in_shopping_cart"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                app:layout_constraintTop_toTopOf="@+id/txt_title_12_month_in_shopping_cart"
+                app:layout_constraintStart_toEndOf="@+id/gl_middle_btn_in_shopping_cart"
+                android:text="@string/txt_off_tewelev_05_in_shopping_cart"
+                app:layout_constraintEnd_toEndOf="parent"/>
+
+            <TextView
+                android:id="@+id/txt_result_interest_05_in_shopping_cart"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                app:layout_constraintTop_toTopOf="@+id/txt_title_12_month_in_shopping_cart"
+                app:layout_constraintStart_toEndOf="@+id/gl_middle_btn_in_shopping_cart"
+                android:text="@string/txt_off_tewelev_05_in_shopping_cart"
                 app:layout_constraintEnd_toEndOf="parent"/>
 
             <com.google.android.material.button.MaterialButton
@@ -357,6 +468,7 @@
                 android:text="@string/btn_txt_check_out_cart"
                 android:layout_marginTop="20dp"
                 android:layout_marginBottom="18dp"
+                android:visibility="visible"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/txt_title_total_amount_in_shopping_cart"
                 app:layout_constraintStart_toStartOf="parent"
