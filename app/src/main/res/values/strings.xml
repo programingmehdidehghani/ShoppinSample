@@ -37,6 +37,9 @@
     <string name="txt_month_in_payment">Month</string>
     <string name="txt_e_pass_in_payment">E-Pass</string>
     <string name="txt_btn_check_out_in_payment">Check Out</string>
-
+    <string name="txt_total_amount_result_payment">Total Amount:</string>
+    <string name="txt_card_number_result_payment">card number:</string>
+    <string name="txt_tracking_code_result_payment">Tracking Code:</string>
+    <string name="btn_txt_in_payment_result">Complete  transaction</string>
 
 </resources>
