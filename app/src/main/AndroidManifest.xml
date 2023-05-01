@@ -17,6 +17,9 @@
         android:theme="@style/Theme.TestShoppingMarket"
         tools:targetApi="31">
         <activity
+            android:name=".ui.activites.PaymentActivity"
+            android:exported="false" />
+        <activity
             android:name=".ui.activites.ShoppingCartActivity"
             android:exported="false" />
         <activity
