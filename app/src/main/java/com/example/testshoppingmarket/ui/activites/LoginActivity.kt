@@ -5,8 +5,12 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import androidx.activity.viewModels
+import androidx.lifecycle.Observer
 import com.example.testshoppingmarket.databinding.LayoutLoginActivityBinding
+import com.example.testshoppingmarket.model.LoginRequest
 import com.example.testshoppingmarket.ui.viewModels.LoginViewModel
+import com.example.testshoppingmarket.utils.Resource
+import com.example.testshoppingmarket.utils.toast
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -23,7 +27,7 @@ class LoginActivity : AppCompatActivity() {
         setContentView(viewBinding.root)
 
         viewBinding.btnLoginInLoginActivity.setOnClickListener {
-   /*         if (viewBinding.etNameInLoginActivity.text.toString().isNotEmpty() && viewBinding.etPassInLoginActivity.text.toString().isNotEmpty()) {
+            if (viewBinding.etNameInLoginActivity.text.toString().isNotEmpty() && viewBinding.etPassInLoginActivity.text.toString().isNotEmpty()) {
                 val loginRequest = LoginRequest(
                     viewBinding.etNameInLoginActivity.text.toString(),
                     viewBinding.etPassInLoginActivity.text.toString()
@@ -34,11 +38,11 @@ class LoginActivity : AppCompatActivity() {
                         is Resource.Success -> {
                             hideProgress()
                             response.data?.let {
-                                toast(this,it.token)*/
+                                toast(this,it.token)
                                 val intent = Intent(this, MainActivity::class.java)
                                 intent.putExtra("isFirstRun",true)
                                 startActivity(intent)
-            /*                }
+                            }
                         }
                         is Resource.Error -> {
                             hideProgress()
@@ -53,7 +57,7 @@ class LoginActivity : AppCompatActivity() {
                 })
             } else {
                 toast(this, "userName or pass is empty")
-            }*/
+            }
         }
 
     }

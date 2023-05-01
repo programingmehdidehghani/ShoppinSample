@@ -31,6 +31,7 @@ class ShoppingCartActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(viewBinding.root)
         insetCart()
+        interestCalculation()
         viewBinding.btnCashInShoppingCart.setOnClickListener {
             viewBinding.btnCashInShoppingCart.setBackgroundColor(R.color.toolbar_color)
             viewBinding.btnLoanInShoppingCart.setBackgroundColor(R.color.very_low_gray)
@@ -67,7 +68,17 @@ class ShoppingCartActivity : AppCompatActivity() {
         viewBinding.rbThreeMonthInActivityShopping.setOnClickListener {
             viewBinding.rbSixMonthInActivityShopping.isChecked = false
             viewBinding.rb12MonthInActivityShopping.isChecked = false
-            val interestResult = price * 20%
+            val interestResult = price.toDouble() * 20
+        }
+        viewBinding.rbSixMonthInActivityShopping.setOnClickListener {
+            viewBinding.rbThreeMonthInActivityShopping.isChecked = false
+            viewBinding.rb12MonthInActivityShopping.isChecked = false
+            val interestResult = price.toDouble() * 10
+        }
+        viewBinding.rb12MonthInActivityShopping.setOnClickListener {
+            viewBinding.rbThreeMonthInActivityShopping.isChecked = false
+            viewBinding.rbSixMonthInActivityShopping.isChecked = false
+
         }
     }
 
