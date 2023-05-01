@@ -8,9 +8,10 @@ import androidx.room.PrimaryKey
     tableName = "cart"
 )
 data class CartModel(
-    @PrimaryKey(autoGenerate = true)
-    var id : Int? = null,
     val name: String,
     val image: String,
     val price: String
-)
+){
+    @PrimaryKey(autoGenerate = true)
+    var id : Int? = null
+}

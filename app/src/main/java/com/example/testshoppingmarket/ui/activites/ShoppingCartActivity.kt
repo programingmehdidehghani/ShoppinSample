@@ -28,13 +28,10 @@ class ShoppingCartActivity : AppCompatActivity() {
     }
 
     fun insetCart(){
-        var id = 0
         val name = intent.getStringExtra("name")
         val price = intent.getStringExtra("price")
         val image = intent.getStringExtra("image")
-        id++
         val cartModel = CartModel(
-            id,
             name.toString(),
             image.toString(),
             price.toString()

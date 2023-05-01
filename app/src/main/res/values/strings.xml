@@ -26,7 +26,11 @@
     <string name="txt_price">price:</string>
     <string name="txt_add_to_buy">Add to cart</string>
     <string name="txt_title_shoppin_cart">Shopping Cart</string>
-    <string name="txt_name_shopping_cart">Name</string>
-
+    <string name="txt_name_shopping_cart">Name:</string>
+    <string name="txt_cash">cash</string>
+    <string name="txt_loan_in_shopping_cart">Loan</string>
+    <string name="txt_total_in_shopping_cart">Total:</string>
+    <string name="txt_total_amount">Total Amount:</string>
+    <string name="btn_txt_check_out_cart">Proceed to Check Out</string>
 
 </resources>
