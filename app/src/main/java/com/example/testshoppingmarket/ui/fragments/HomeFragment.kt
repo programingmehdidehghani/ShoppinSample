@@ -19,7 +19,7 @@ import com.example.testshoppingmarket.databinding.LayoutHomeFragmentBinding
 import com.example.testshoppingmarket.model.CategoriesHeader
 import com.example.testshoppingmarket.model.ProductsCategory
 import com.example.testshoppingmarket.ui.activites.AddProductActivity
-import com.example.testshoppingmarket.ui.dialogs.DialogDetailProduct
+import com.example.testshoppingmarket.ui.dialogs.DetailProductDialog
 import com.example.testshoppingmarket.ui.viewModels.HomeFragmentViewModel
 import com.example.testshoppingmarket.utils.Resource
 import com.example.testshoppingmarket.utils.toast
@@ -230,7 +230,7 @@ class HomeFragment : Fragment(), OnItemClickCallback , OnItemClickCallbackProduc
                     response.data?.let {
                         hideProgress()
                         val fm: FragmentManager = requireActivity().supportFragmentManager
-                        val dialog = DialogDetailProduct()
+                        val dialog = DetailProductDialog()
                         val bundle = Bundle()
                         bundle.putString("image",it.image)
                         bundle.putString("title",it.title)

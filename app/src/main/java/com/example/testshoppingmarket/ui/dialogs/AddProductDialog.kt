@@ -8,7 +8,7 @@ import androidx.fragment.app.DialogFragment
 import com.example.testshoppingmarket.databinding.LayoutDialogAddProductBinding
 import com.example.testshoppingmarket.utils.ImageLoader
 
-class DialogAddProduct: DialogFragment() {
+class AddProductDialog: DialogFragment() {
 
     private lateinit var binding: LayoutDialogAddProductBinding
 

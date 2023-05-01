@@ -7,13 +7,12 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.DialogFragment
 import com.example.testshoppingmarket.databinding.LayoutDialogDetailProductBinding
-import com.example.testshoppingmarket.ui.activites.MainActivity
 import com.example.testshoppingmarket.ui.activites.ShoppingCartActivity
 import com.example.testshoppingmarket.utils.ImageLoader
 
 
 @Suppress("UNREACHABLE_CODE")
-class DialogDetailProduct : DialogFragment() {
+class DetailProductDialog : DialogFragment() {
 
     private lateinit var binding: LayoutDialogDetailProductBinding
 

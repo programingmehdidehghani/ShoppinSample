@@ -9,7 +9,7 @@ import androidx.fragment.app.FragmentManager
 import androidx.lifecycle.Observer
 import com.example.testshoppingmarket.databinding.LayoutActivityAddProfileBinding
 import com.example.testshoppingmarket.model.AddProductRequest
-import com.example.testshoppingmarket.ui.dialogs.DialogAddProduct
+import com.example.testshoppingmarket.ui.dialogs.AddProductDialog
 import com.example.testshoppingmarket.ui.viewModels.AddProductViewModel
 import com.example.testshoppingmarket.utils.Resource
 import com.example.testshoppingmarket.utils.toast
@@ -47,7 +47,7 @@ class AddProductActivity : AppCompatActivity() {
                             hideProgress()
                             toast(this,"get categories name {${it}")
                             val fm: FragmentManager = this.supportFragmentManager
-                            val dialog = DialogAddProduct()
+                            val dialog = AddProductDialog()
                             dialog.show(fm,"start")
                         }
                     }

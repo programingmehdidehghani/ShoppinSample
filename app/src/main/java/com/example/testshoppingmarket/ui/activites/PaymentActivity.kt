@@ -15,5 +15,8 @@ class PaymentActivity : AppCompatActivity() {
         setContentView(viewBinding.root)
         val allTotal = intent.getStringExtra("total")
         viewBinding.txtTotalAmountInPaymentActivity.text = getString(R.string.txt_all_total_in_payment).format(allTotal)
+        viewBinding.btnCheckOutInPaymentActivity.setOnClickListener {
+
+        }
     }
 }
