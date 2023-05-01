@@ -10,12 +10,14 @@ import com.example.testshoppingmarket.databinding.LayoutActivityShoppingCartBind
 import com.example.testshoppingmarket.databinding.LayoutMainActivityBinding
 import com.example.testshoppingmarket.db.CartModel
 import com.example.testshoppingmarket.ui.viewModels.MainViewModel
+import com.example.testshoppingmarket.utils.ImageLoader
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
 class ShoppingCartActivity : AppCompatActivity() {
 
     private val mainViewModel: MainViewModel by viewModels()
+
 
     private val viewBinding by lazy {
         LayoutActivityShoppingCartBinding.inflate(layoutInflater)
@@ -25,6 +27,10 @@ class ShoppingCartActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(viewBinding.root)
         insetCart()
+        setTextCart()
+        viewBinding.btnCheckOutInShoppingCart.setOnClickListener {
+
+        }
     }
 
     fun insetCart(){
@@ -37,8 +43,13 @@ class ShoppingCartActivity : AppCompatActivity() {
             price.toString()
         )
         mainViewModel.insertCart(cartModel)
-        mainViewModel.getContentCart().observe(this, Observer {
-
-        })
+        viewBinding.txtTitleProductInShoppingCart.text = name
+        viewBinding.txtPriceDbProductInShoppingCart.text = price
+        ImageLoader.loadImage(viewBinding.ivImageProductInShappingCart,image.toString())
     }
+
+    fun setTextCart(){
+
+    }
+
 }

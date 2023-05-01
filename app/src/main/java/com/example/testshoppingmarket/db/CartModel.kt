@@ -1,11 +1,13 @@
 package com.example.testshoppingmarket.db
 
 import androidx.room.Entity
+import androidx.room.Index
 import androidx.room.PrimaryKey
 
 
 @Entity(
-    tableName = "cart"
+    tableName = "cart",
+    indices = [Index(value = ["name"], unique = true)]
 )
 data class CartModel(
     val name: String,

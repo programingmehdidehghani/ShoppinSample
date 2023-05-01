@@ -47,7 +47,7 @@ class DialogDetailProduct : DialogFragment() {
         binding.btnAddToCartInDialogDetailProduct.setOnClickListener {
             val intent = Intent(this.requireContext(),ShoppingCartActivity::class.java)
             intent.putExtra("name",binding.txtTitleDialogDetailProduct.text)
-            intent.putExtra("image",binding.ivImageDetailProduct.toString())
+            intent.putExtra("image",image.toString())
             intent.putExtra("price",binding.txtPriceInDetailProduct.text)
             startActivity(intent)
             this.dismiss()
