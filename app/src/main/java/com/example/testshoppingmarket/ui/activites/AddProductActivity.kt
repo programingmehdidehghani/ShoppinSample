@@ -1,18 +1,22 @@
 package com.example.testshoppingmarket.ui.activites
 
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.FragmentManager
+import androidx.lifecycle.Observer
 import com.example.testshoppingmarket.databinding.LayoutActivityAddProfileBinding
+import com.example.testshoppingmarket.model.AddProductRequest
 import com.example.testshoppingmarket.ui.dialogs.DialogAddProduct
 import com.example.testshoppingmarket.ui.viewModels.AddProductViewModel
-import com.google.android.material.internal.ContextUtils.getActivity
+import com.example.testshoppingmarket.utils.Resource
+import com.example.testshoppingmarket.utils.toast
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class AddProfileActivity : AppCompatActivity() {
+class AddProductActivity : AppCompatActivity() {
 
     private val viewModeProduct: AddProductViewModel by viewModels()
 
@@ -28,10 +32,7 @@ class AddProfileActivity : AppCompatActivity() {
 
     fun sendAddProduct(){
         viewBinding.btnAddProductInAddProfile.setOnClickListener {
-            val fm: FragmentManager = this.supportFragmentManager
-            val dialog = DialogAddProduct()
-            dialog.show(fm,"start")
-         /*   val addProduct = AddProductRequest(
+            val addProduct = AddProductRequest(
                 viewBinding.etTitleInAddProfile.text.toString(),
                 viewBinding.etPriceInAddProfile.text.toString(),
                 viewBinding.etDescriptionInAddProfile.text.toString(),
@@ -45,6 +46,9 @@ class AddProfileActivity : AppCompatActivity() {
                         response.data?.let{
                             hideProgress()
                             toast(this,"get categories name {${it}")
+                            val fm: FragmentManager = this.supportFragmentManager
+                            val dialog = DialogAddProduct()
+                            dialog.show(fm,"start")
                         }
                     }
                     is Resource.Error -> {
@@ -58,7 +62,7 @@ class AddProfileActivity : AppCompatActivity() {
                         showProgress()
                     }
                 }
-            })*/
+            })
         }
     }
 

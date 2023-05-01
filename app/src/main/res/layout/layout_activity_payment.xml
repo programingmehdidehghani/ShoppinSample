@@ -7,7 +7,7 @@
     tools:context=".ui.activites.PaymentActivity">
 
     <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolbar_in_activity_main"
+        android:id="@+id/toolbar_in_activity_payment"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         android:background="@color/toolbar_color"
@@ -44,7 +44,7 @@
                 android:text="@string/login_title"
                 android:layout_marginStart="12dp"
                 android:textColor="@color/lower_white"
-                app:layout_constraintStart_toStartOf="@+id/gl_start_text_middle_in_main_activity"
+                app:layout_constraintStart_toStartOf="@+id/gl_start_text_middle_in_payment_activity"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintBottom_toBottomOf="parent"
                 />
@@ -73,7 +73,100 @@
     </androidx.appcompat.widget.Toolbar>
 
 
-    
+    <TextView
+        android:id="@+id/txt_total_amount_in_payment_activity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="22dp"
+        android:textStyle="bold"
+        android:textSize="16sp"
+        android:gravity="center"
+        android:background="@drawable/rectangle_37"
+        android:text="@string/txt_all_total_in_payment"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar_in_activity_payment"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <androidx.cardview.widget.CardView
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txt_total_amount_in_payment_activity"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginBottom="18dp"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="18dp"
+        android:layout_marginStart="25dp"
+        android:layout_marginEnd="25dp"
+        app:cardCornerRadius="12dp"
+        app:cardElevation="8dp"
+        app:cardPreventCornerOverlap="true">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/et_number_card_in_payment_activity"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:digits="0123456789-"
+                android:maxLength="16"
+                android:inputType="number"
+                android:layout_marginEnd="18dp"
+                android:layout_marginStart="18dp"
+                android:layout_marginTop="18dp"
+                android:background="@drawable/background_et_login_activity"
+                android:padding="8dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:hint="2222-2222-2222-2222"
+                />
+
+            <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/et_ccv2_in_payment_activity"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:digits="0123456789-"
+            android:maxLength="5"
+            android:inputType="number"
+            android:layout_marginEnd="18dp"
+            android:layout_marginStart="18dp"
+            android:layout_marginTop="18dp"
+            android:background="@drawable/background_et_login_activity"
+            android:padding="8dp"
+            app:layout_constraintTop_toBottomOf="@+id/et_number_card_in_payment_activity"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:hint="CCV2"
+            />
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/et_ccv2_in_payment_activity"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:digits="0123456789-"
+                android:maxLength="5"
+                android:inputType="number"
+                android:layout_marginEnd="18dp"
+                android:layout_marginStart="18dp"
+                android:layout_marginTop="18dp"
+                android:background="@drawable/background_et_login_activity"
+                android:padding="8dp"
+                app:layout_constraintTop_toBottomOf="@+id/et_number_card_in_payment_activity"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:hint="CCV2"
+                />
+
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+    </androidx.cardview.widget.CardView>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

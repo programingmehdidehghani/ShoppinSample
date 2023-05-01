@@ -23,7 +23,7 @@
             android:name=".ui.activites.ShoppingCartActivity"
             android:exported="false" />
         <activity
-            android:name=".ui.activites.AddProfileActivity"
+            android:name=".ui.activites.AddProductActivity"
             android:exported="false" />
         <activity
             android:name=".ui.activites.MainActivity"

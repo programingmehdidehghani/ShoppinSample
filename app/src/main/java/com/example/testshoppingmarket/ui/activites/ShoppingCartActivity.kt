@@ -1,5 +1,6 @@
 package com.example.testshoppingmarket.ui.activites
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
@@ -27,13 +28,9 @@ class ShoppingCartActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(viewBinding.root)
         insetCart()
-        setTextCart()
-        viewBinding.btnCheckOutInShoppingCart.setOnClickListener {
-
-        }
     }
 
-    fun insetCart(){
+    fun insetCart() {
         val name = intent.getStringExtra("name")
         val price = intent.getStringExtra("price")
         val image = intent.getStringExtra("image")
@@ -45,11 +42,14 @@ class ShoppingCartActivity : AppCompatActivity() {
         mainViewModel.insertCart(cartModel)
         viewBinding.txtTitleProductInShoppingCart.text = name
         viewBinding.txtPriceDbProductInShoppingCart.text = price
-        ImageLoader.loadImage(viewBinding.ivImageProductInShappingCart,image.toString())
+        viewBinding.txtTotalCheckProductInShoppingCart.text = price
+        ImageLoader.loadImage(viewBinding.ivImageProductInShappingCart, image.toString())
+        viewBinding.btnCheckOutInShoppingCart.setOnClickListener {
+            val intent = Intent(this, PaymentActivity::class.java)
+            intent.putExtra("total",price)
+            startActivity(intent)
+        }
     }
 
-    fun setTextCart(){
-
-    }
 
 }

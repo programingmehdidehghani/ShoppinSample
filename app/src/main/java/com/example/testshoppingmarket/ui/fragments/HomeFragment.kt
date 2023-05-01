@@ -18,10 +18,9 @@ import com.example.testshoppingmarket.adapters.ProductCategoryAdapter
 import com.example.testshoppingmarket.databinding.LayoutHomeFragmentBinding
 import com.example.testshoppingmarket.model.CategoriesHeader
 import com.example.testshoppingmarket.model.ProductsCategory
-import com.example.testshoppingmarket.ui.activites.AddProfileActivity
+import com.example.testshoppingmarket.ui.activites.AddProductActivity
 import com.example.testshoppingmarket.ui.dialogs.DialogDetailProduct
 import com.example.testshoppingmarket.ui.viewModels.HomeFragmentViewModel
-import com.example.testshoppingmarket.utils.ImageLoader
 import com.example.testshoppingmarket.utils.Resource
 import com.example.testshoppingmarket.utils.toast
 import dagger.hilt.android.AndroidEntryPoint
@@ -56,7 +55,7 @@ class HomeFragment : Fragment(), OnItemClickCallback , OnItemClickCallbackProduc
         super.onViewCreated(view, savedInstanceState)
         homeFragmentViewModel = ViewModelProvider(requireActivity()).get(HomeFragmentViewModel::class.java)
         binding.btnAddProductInHomeFragment.setOnClickListener {
-            val intent = Intent(requireContext(), AddProfileActivity::class.java)
+            val intent = Intent(requireContext(), AddProductActivity::class.java)
             startActivity(intent)
         }
         getCategoriesName()
