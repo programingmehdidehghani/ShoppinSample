@@ -133,25 +133,25 @@ class HomeFragmentViewModel @Inject constructor(
                     }
                 } else {
                     _getResultSort.postValue(Resource.Error(response.message()))
-                    Log.i("category","error is  .."+response.message())
+                    Log.i("resultSort","error is  .."+response.message())
                     Resource.Error(response.message())
                 }
             } else {
                 _getResultSort.postValue(Resource.Error("No Internet Connection.!"))
-                Log.i("category","error is  ..")
+                Log.i("resultSort","error is  ..")
                 toast(getApplication(), "No Internet Connection.!")
 
             }
         } catch (e: HttpException) {
             toast(getApplication(), "Exception ${e.message}")
             _getResultSort.postValue(Resource.Error(e.message()))
-            Log.i("category","error is  .."+e.message())
+            Log.i("resultSort","error is  .."+e.message())
         } catch (t: Throwable) {
             when (t) {
                 is IOException -> {
                     toast(getApplication(), "Exception ${t.message}")
                     _getResultSort.postValue(Resource.Error(t.message!!))
-                    Log.i("category","error is  .."+t.message)
+                    Log.i("resultSort","error is  .."+t.message)
                 }
             }
         }
@@ -173,25 +173,25 @@ class HomeFragmentViewModel @Inject constructor(
                     }
                 } else {
                     _detailProduct.postValue(Resource.Error(response.message()))
-                    Log.i("category", "error is  .." + response.message())
+                    Log.i("detailProduct", "error is  .." + response.message())
                     Resource.Error(response.message())
                 }
             } else {
                 _detailProduct.postValue(Resource.Error("No Internet Connection.!"))
-                Log.i("category", "error is  ..")
+                Log.i("detailProduct", "error is  ..")
                 toast(getApplication(), "No Internet Connection.!")
 
             }
         } catch (e: HttpException) {
             toast(getApplication(), "Exception ${e.message}")
             _detailProduct.postValue(Resource.Error(e.message()))
-            Log.i("category", "error is  .." + e.message())
+            Log.i("detailProduct", "error is  .." + e.message())
         } catch (t: Throwable) {
             when (t) {
                 is IOException -> {
                     toast(getApplication(), "Exception ${t.message}")
                     _detailProduct.postValue(Resource.Error(t.message!!))
-                    Log.i("category", "error is  .." + t.message)
+                    Log.i("detailProduct", "error is  .." + t.message)
                 }
             }
         }
