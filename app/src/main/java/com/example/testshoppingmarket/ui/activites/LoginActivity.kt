@@ -27,7 +27,7 @@ class LoginActivity : AppCompatActivity() {
         setContentView(viewBinding.root)
 
         viewBinding.btnLoginInLoginActivity.setOnClickListener {
-   /*         if (viewBinding.etNameInLoginActivity.text.toString().isNotEmpty() && viewBinding.etPassInLoginActivity.text.toString().isNotEmpty()) {
+            if (viewBinding.etNameInLoginActivity.text.toString().isNotEmpty() && viewBinding.etPassInLoginActivity.text.toString().isNotEmpty()) {
                 val loginRequest = LoginRequest(
                     viewBinding.etNameInLoginActivity.text.toString(),
                     viewBinding.etPassInLoginActivity.text.toString()
@@ -38,11 +38,11 @@ class LoginActivity : AppCompatActivity() {
                         is Resource.Success -> {
                             hideProgress()
                             response.data?.let {
-                                toast(this,it.token)*/
+                                toast(this,it.token)
                                 val intent = Intent(this, MainActivity::class.java)
                                 intent.putExtra("isFirstRun",true)
                                 startActivity(intent)
-         /*                   }
+                            }
                         }
                         is Resource.Error -> {
                             hideProgress()
@@ -57,7 +57,7 @@ class LoginActivity : AppCompatActivity() {
                 })
             } else {
                 toast(this, "userName or pass is empty")
-            }*/
+            }
         }
 
     }
