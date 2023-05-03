@@ -236,6 +236,7 @@ class HomeFragment : Fragment(), OnItemClickCallback , OnItemClickCallbackProduc
                         bundle.putString("title",it.title)
                         bundle.putString("description",it.description)
                         bundle.putString("price",it.price.toString())
+                        bundle.putFloat("rating", it.rating.rate.toFloat())
                         dialog.arguments = bundle
                         dialog.show(fm, "start")
                     }

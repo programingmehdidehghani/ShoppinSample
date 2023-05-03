@@ -38,11 +38,13 @@ class DetailProductDialog : DialogFragment() {
         var title = bundle!!.getString("title")
         var description = bundle!!.getString("description")
         var price = bundle!!.getString("price")
+        var rating = bundle!!.getInt("rating")
 
         ImageLoader.loadImage(binding.ivImageDetailProduct, image.toString())
         binding.txtDescriptionInDialogDetailProduct.text = description
         binding.txtTitleDialogDetailProduct.text = title
         binding.txtPriceInDetailProduct.text = price
+        binding.rbInDetailProduct.rating = rating.toFloat()
         binding.btnAddToCartInDialogDetailProduct.setOnClickListener {
             val intent = Intent(this.requireContext(),ShoppingCartActivity::class.java)
             intent.putExtra("name",binding.txtTitleDialogDetailProduct.text)
